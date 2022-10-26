@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Employee Schedule</title>
+    <link rel="stylesheet" href="/employ_sched/nicepage.css" media="screen">
+<link rel="stylesheet" href="/employ_sched/Page-5.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/employ_sched/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/employ_sched/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 4.19.3, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue:400">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Page 5">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-grey-80 u-header u-header" id="sec-db6e"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-custom-font u-text u-text-default u-text-1">Wan-Ten Soup </p>
+        <p class="u-custom-font u-text u-text-default u-text-2">Hello [[${#request.userPrincipal.principal.username}]]</p>
+        <form th:action="@{/manager/logout}" method="post">
+        <input type="submit" value="Logout" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-1"/>
+        </form>
+        <a href="http://localhost:8080/employee/menu" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-2">Menu</a>
+        <a href="http://localhost:8080/employee/info" class="u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-3">Back</a>
+      </div></header>
+    <section class="u-clearfix u-gradient u-section-1" id="sec-0dda">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-style u-grey-80 u-group u-shape-rectangle u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <p class="u-align-center u-custom-font u-text u-text-default u-text-1">Employee Schedule</p>
+          </div>
+        </div>
+        <div class="u-container-style u-group u-opacity u-opacity-65 u-shape-rectangle u-white u-group-2">
+          <div class="u-container-layout u-container-layout-2">
+            <div class="u-table u-table-responsive u-table-1">
+              <table class="u-table-entity">
+                <colgroup>
+                  <col width="16.6%">
+                  <col width="16.6%">
+                  <col width="16.6%">
+                  <col width="17%">
+                  <col width="16.6%">
+                  <col width="16.6%">
+                </colgroup>
+                <thead class="u-align-center u-black u-table-header u-table-header-1">
+                  <tr style="height: 47px;">
+                    <th class="u-border-1 u-border-black u-table-cell">Monday<br>Oct. 24, 2022
+                    </th>
+                    <th class="u-border-1 u-border-black u-table-cell">Tuesday<br>Oct. 25, 2022
+                    </th>
+                    <th class="u-border-1 u-border-black u-table-cell">Wednesday<br>Oct. 26, 2022
+                    </th>
+                    <th class="u-border-1 u-border-black u-table-cell">Thursday<br>Oct. 27, 2022
+                    </th>
+                    <th class="u-border-1 u-border-black u-table-cell">Friday<br>Oct. 28, 2022
+                    </th>
+                    <th class="u-border-1 u-border-black u-table-cell">Saturday<br>Oct. 29, 2022
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="u-align-center u-table-body u-table-body-1">
+                  <tr style="height: 58px;">
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">8:00AM - 3:00PM</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">Day Off</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">8:00AM - 3:00PM</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">8:00AM - 3:00PM</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">8:00AM - 3:00PM</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell"> 8:00AM - 12:30PM</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="u-table u-table-responsive u-table-2">
+              <table class="u-table-entity">
+                <colgroup>
+                  <col width="16.6%">
+                  <col width="16.6%">
+                  <col width="16.6%">
+                  <col width="17%">
+                  <col width="16.6%">
+                  <col width="16.6%">
+                </colgroup>
+                <thead class="u-align-center u-black u-table-header u-table-header-2">
+                  <tr style="height: 71px;">
+                    <th class="u-border-1 u-border-black u-table-cell">Monday<br>Oct. 31, 2022
+                    </th>
+                    <th class="u-border-1 u-border-black u-table-cell">Tuesday<br>Nov. 1, 2022
+                    </th>
+                    <th class="u-border-1 u-border-black u-table-cell">Wednesday<br>Nov. 2, 2022
+                    </th>
+                    <th class="u-border-1 u-border-black u-table-cell">Thursday<br>Nov. 3, 2022
+                    </th>
+                    <th class="u-border-1 u-border-black u-table-cell">Friday<br>Nov. 4, 2022
+                    </th>
+                    <th class="u-border-1 u-border-black u-table-cell">Saturday<br>Nov. 5, 2022
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="u-align-center u-table-body u-table-body-2">
+                  <tr style="height: 58px;">
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">8:00AM - 3:00PM</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">8:00AM - 3:00PM</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">8:00AM - 3:00PM</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">Day Off</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">8:00AM - 3:00PM</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell"> 8:00AM - 12:30PM</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/html5-template" target="_blank">
+        <span>HTML5 Templates</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="https://nicepage.cc" target="_blank">
+        <span>Website Builder</span>
+      </a>. 
+    </section>
+  
+</body></html>

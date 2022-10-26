@@ -1,0 +1,150 @@
+ .u-section-1 {
+  background-image: linear-gradient(#de3038, #f1c50e);
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 50vw;
+}
+
+.u-section-1 .u-group-1 {
+  width: 973px;
+  min-height: 92px;
+  height: auto;
+  margin: 78px auto 0;
+}
+
+.u-section-1 .u-container-layout-1 {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.u-section-1 .u-text-1 {
+  font-size: 3rem;
+  font-family: "Bebas Neue";
+  margin: 8px auto 0;
+}
+
+.u-section-1 .u-group-2 {
+  width: 973px;
+  min-height: 397px;
+  height: auto;
+  margin: 0 auto 60px;
+}
+
+.u-section-1 .u-container-layout-2 {
+  padding: 30px 9px;
+}
+
+.u-section-1 .u-table-1 {
+  width: 924px;
+  margin: 0 13px 0 auto;
+}
+
+.u-section-1 .u-table-header-1 {
+  font-weight: 700;
+  background-image: none;
+}
+
+.u-section-1 .u-table-body-1 {
+  font-size: 0.875rem;
+}
+
+.u-section-1 .u-table-2 {
+  width: 928px;
+  margin: 45px auto 0;
+}
+
+.u-section-1 .u-table-header-2 {
+  font-weight: 700;
+  background-image: none;
+}
+
+.u-section-1 .u-table-body-2 {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-group-1 {
+    width: 940px;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+  }
+
+  .u-section-1 .u-group-2 {
+    width: 940px;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+  }
+
+  .u-section-1 .u-table-1 {
+    width: 921px;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-table-2 {
+    width: 921px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-group-1 {
+    width: 720px;
+  }
+
+  .u-section-1 .u-group-2 {
+    width: 720px;
+  }
+
+  .u-section-1 .u-table-1 {
+    width: 701px;
+  }
+
+  .u-section-1 .u-table-2 {
+    width: 701px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-group-1 {
+    width: 540px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .u-section-1 .u-group-2 {
+    width: 540px;
+  }
+
+  .u-section-1 .u-table-1 {
+    width: 521px;
+  }
+
+  .u-section-1 .u-table-2 {
+    width: 521px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-group-1 {
+    width: 340px;
+  }
+
+  .u-section-1 .u-group-2 {
+    width: 340px;
+  }
+
+  .u-section-1 .u-table-1 {
+    width: 321px;
+  }
+
+  .u-section-1 .u-table-2 {
+    width: 321px;
+  }
+}.u-section-2 .u-sheet-1 {
+  min-height: 464px;
+}

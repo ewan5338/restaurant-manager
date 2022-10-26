@@ -1,0 +1,267 @@
+ .u-section-1 {
+  background-image: linear-gradient(#de3038, #f1c50e);
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 100vh;
+}
+
+.u-section-1 .u-group-1 {
+  width: 1038px;
+  min-height: 98px;
+  height: auto;
+  margin: 68px auto 0;
+}
+
+.u-section-1 .u-container-layout-1 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.u-section-1 .u-text-1 {
+  font-size: 3.75rem;
+  font-family: "Bebas Neue";
+  margin: 0 94px;
+}
+
+.u-section-1 .u-btn-1 {
+  border-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  background-image: none;
+  margin: -69px auto 0 20px;
+}
+
+.u-section-1 .u-slider-1 {
+  width: 1038px;
+  min-height: 461px;
+  height: auto;
+  margin: 0 auto 60px;
+}
+
+.u-section-1 .u-carousel-indicators-1 {
+  position: absolute;
+  bottom: 10px;
+  width: auto;
+  height: auto;
+}
+
+.u-section-1 .u-carousel-item-1 {
+  background-image: none;
+}
+
+.u-section-1 .u-container-layout-2 {
+  padding: 0;
+}
+
+.u-section-1 .u-table-1 {
+  width: 1011px;
+  margin: 12px auto 0;
+}
+
+.u-section-1 .u-table-header-1 {
+  font-weight: 700;
+  background-image: none;
+  font-size: 0.875rem;
+}
+
+.u-section-1 .u-table-body-1 {
+  font-size: 0.875rem;
+}
+
+.u-section-1 .u-table-cell-8 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-cell-15 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-cell-22 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-cell-29 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-cell-36 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-cell-43 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-cell-50 {
+  background-image: none;
+}
+
+.u-block-c3a5-48 {
+  background-image: none;
+}
+
+.u-section-1 .u-carousel-item-2 {
+  background-image: none;
+}
+
+.u-section-1 .u-container-layout-3 {
+  padding: 10px 14px;
+}
+
+.u-section-1 .u-table-2 {
+  margin: 0;
+}
+
+.u-section-1 .u-table-header-2 {
+  font-weight: 700;
+  background-image: none;
+  font-size: 0.875rem;
+}
+
+.u-section-1 .u-table-body-2 {
+  font-size: 0.875rem;
+}
+
+.u-section-1 .u-table-cell-64 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-cell-71 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-cell-78 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-cell-85 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-cell-92 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-cell-99 {
+  background-image: none;
+}
+
+.u-section-1 .u-table-cell-106 {
+  background-image: none;
+}
+
+.u-block-c3a5-154 {
+  background-image: none;
+}
+
+.u-section-1 .u-carousel-control-1 {
+  width: 38px;
+  height: 38px;
+  background-image: none;
+  left: -58px;
+  position: absolute;
+  right: auto;
+}
+
+.u-section-1 .u-carousel-control-2 {
+  width: 38px;
+  height: 38px;
+  background-image: none;
+  left: auto;
+  position: absolute;
+  right: -58px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-group-1 {
+    width: 940px;
+    height: auto;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-left: 45px;
+    margin-right: 45px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    margin-left: 0;
+  }
+
+  .u-section-1 .u-slider-1 {
+    width: 940px;
+  }
+
+  .u-section-1 .u-table-1 {
+    width: 940px;
+  }
+
+  .u-section-1 .u-table-2 {
+    margin-right: initial;
+    margin-left: initial;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-group-1 {
+    width: 720px;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-slider-1 {
+    width: 720px;
+  }
+
+  .u-section-1 .u-table-1 {
+    width: 720px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-group-1 {
+    width: 540px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-1 .u-slider-1 {
+    width: 540px;
+  }
+
+  .u-section-1 .u-table-1 {
+    width: 540px;
+  }
+
+  .u-section-1 .u-container-layout-3 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-group-1 {
+    width: 340px;
+  }
+
+  .u-section-1 .u-slider-1 {
+    width: 340px;
+  }
+
+  .u-section-1 .u-table-1 {
+    width: 340px;
+  }
+}

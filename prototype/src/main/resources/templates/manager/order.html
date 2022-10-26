@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Order Items</title>
+    <link rel="stylesheet" href="/managerOrder/nicepage.css" media="screen">
+<link rel="stylesheet" href="/managerOrder/Page-7.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/managerOrder/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/managerOrder/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 4.19.3, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue:400">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Page 7">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-grey-80 u-header u-header" id="sec-14f1"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-custom-font u-text u-text-1">Wan-Ten Soup </p>
+        <form th:action="@{/manager/logout}" method="post">
+        <input type="submit" value="Logout" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-1"/>
+        </form>
+        <a href="http://localhost:8080/manager/menu" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-2">Menu</a>
+        <a href="http://localhost:8080/manager/produce" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-3">Back</a>
+      </div></header>
+    <section class="u-clearfix u-gradient u-section-1" id="sec-b167">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-style u-grey-80 u-group u-shape-rectangle u-group-1">
+          <div class="u-container-layout u-valign-middle u-container-layout-1">
+            <p class="u-align-center u-custom-font u-text u-text-1">Select Items &amp; Amount</p>
+          </div>
+        </div>
+        <div class="u-container-style u-grey-80 u-group u-radius-39 u-shape-round u-group-2">
+          <div class="u-container-layout u-container-layout-2">
+            <p class="u-align-center u-custom-font u-text u-text-2">Vendor: N​orthside Market</p>
+          </div>
+        </div>
+        <div class="u-container-style u-group u-opacity u-opacity-65 u-shape-rectangle u-white u-group-3">
+          <div class="u-container-layout u-container-layout-3">
+            <div class="u-align-right u-table u-table-responsive u-table-1">
+              <table class="u-table-entity">
+                <colgroup>
+                  <col width="49.9%">
+                  <col width="50.1%">
+                </colgroup>
+                <tbody class="u-align-center u-table-body">
+                  <tr style="height: 45px;">
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">Chicken Stock</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  </tr>
+                  <tr style="height: 45px;">
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">Vegetable Stock</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  </tr>
+                  <tr style="height: 45px;">
+                    <td class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-5">Tomatoes</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">15</td>
+                  </tr>
+                  <tr style="height: 45px;">
+                    <td class="u-border-1 u-border-grey-30 u-table-cell u-table-cell-7">Carrots</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  </tr>
+                  <tr style="height: 45px;">
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">Udon Noodles</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  </tr>
+                  <tr style="height: 46px;">
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">Egg Noodles</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">85</td>
+                  </tr>
+                  <tr style="height: 45px;">
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">Ramen Noodles</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">30</td>
+                  </tr>
+                  <tr style="height: 46px;">
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">Cabbage</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  </tr>
+                  <tr style="height: 46px;">
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">Bok Choy</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  </tr>
+                  <tr style="height: 46px;">
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">Celery</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">70</td>
+                  </tr>
+                  <tr style="height: 46px;">
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">Mushrooms</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  </tr>
+                  <tr style="height: 40px;">
+                    <td class="u-border-1 u-border-grey-30 u-table-cell">Pepsi</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-1">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6384"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-6384"><path d="M130,30v100H30V30H130 M160,0H0v160h160V0L160,0z"></path></svg>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-2">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-3101"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-3101"><path d="M130,30v100H30V30H130 M160,0H0v160h160V0L160,0z"></path></svg>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-3">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1c3d"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-1c3d" style="enable-background:new 0 0 160 160;"><path d="M105.7,80L160,0h-51.4L80,42.2L51.4,0H0l54.3,80L0,160h51.4L80,117.8l28.6,42.2H160L105.7,80z"></path></svg>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-4">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-0f30"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-0f30"><path d="M130,30v100H30V30H130 M160,0H0v160h160V0L160,0z"></path></svg>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-5">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-7cca"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-7cca"><path d="M130,30v100H30V30H130 M160,0H0v160h160V0L160,0z"></path></svg>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-6">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-0e3b"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-0e3b"><path d="M130,30v100H30V30H130 M160,0H0v160h160V0L160,0z"></path></svg>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-7">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-cfb5"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-cfb5" style="enable-background:new 0 0 160 160;"><path d="M105.7,80L160,0h-51.4L80,42.2L51.4,0H0l54.3,80L0,160h51.4L80,117.8l28.6,42.2H160L105.7,80z"></path></svg>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-8">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-97c4"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-97c4"><path d="M130,30v100H30V30H130 M160,0H0v160h160V0L160,0z"></path></svg>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-9">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-7784"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-7784" style="enable-background:new 0 0 160 160;"><path d="M105.7,80L160,0h-51.4L80,42.2L51.4,0H0l54.3,80L0,160h51.4L80,117.8l28.6,42.2H160L105.7,80z"></path></svg>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-10">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-90e0"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-90e0"><path d="M130,30v100H30V30H130 M160,0H0v160h160V0L160,0z"></path></svg>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-11">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b668"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-b668"><path d="M130,30v100H30V30H130 M160,0H0v160h160V0L160,0z"></path></svg>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-12">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-780a"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-780a"><path d="M130,30v100H30V30H130 M160,0H0v160h160V0L160,0z"></path></svg>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-13">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6aad"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-6aad" style="enable-background:new 0 0 160 160;"><path d="M105.7,80L160,0h-51.4L80,42.2L51.4,0H0l54.3,80L0,160h51.4L80,117.8l28.6,42.2H160L105.7,80z"></path></svg>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-14">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-cf3d"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-cf3d"><path d="M130,30v100H30V30H130 M160,0H0v160h160V0L160,0z"></path></svg>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-15">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-3fd9"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-3fd9"><path d="M130,30v100H30V30H130 M160,0H0v160h160V0L160,0z"></path></svg>
+            </div>
+            <div class="u-shape u-shape-svg u-text-black u-shape-16">
+              <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4dba"></use></svg>
+              <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-4dba"><path d="M130,30v100H30V30H130 M160,0H0v160h160V0L160,0z"></path></svg>
+            </div>
+          </div>
+        </div>
+        <div class="u-container-style u-group u-opacity u-opacity-65 u-shape-rectangle u-white u-group-4">
+          <div class="u-container-layout u-valign-top u-container-layout-4">
+            <ul class="u-text u-text-3">
+              <li>Tomatoes - x15</li>
+              <li>Egg Noodles - x85</li>
+              <li>Ramen Noodles - x30</li>
+              <li>Celery - x70</li>
+            </ul>
+          </div>
+        </div>
+        <div class="u-container-style u-grey-80 u-group u-shape-rectangle u-group-5">
+          <div class="u-container-layout u-valign-middle u-container-layout-5">
+            <p class="u-align-center u-custom-font u-text u-text-4">Order</p>
+          </div>
+        </div>
+        <a href="http://localhost:8080/manager/orderconfirm" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-1">Submit</a>
+      </div>
+    </section>
+    
+    
+    
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/templates" target="_blank">
+        <span>Templates</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="https://nicepage.com/wysiwyg-html-editor" target="_blank">
+        <span>Free WYSIWYG HTML Editor</span>
+      </a>. 
+    </section>
+  
+</body></html>
