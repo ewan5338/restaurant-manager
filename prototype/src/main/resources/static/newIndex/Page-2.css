@@ -3,7 +3,7 @@
 }
 
 .u-section-1 .u-sheet-1 {
-  min-height: 888px;
+  min-height: 100vh;
 }
 
 .u-section-1 .u-group-1 {
@@ -31,7 +31,6 @@
 
 .u-section-1 .u-repeater-1 {
   min-height: 310px;
-  grid-auto-columns: calc(33.3333% - 54px);
   grid-template-columns: calc(33.3333% - 54px) calc(33.3333% - 54px) calc(33.3333% - 54px);
   grid-gap: 81px 81px;
 }
@@ -118,8 +117,6 @@
 
   .u-section-1 .u-repeater-1 {
     min-height: 288px;
-    grid-auto-columns: calc(33.333333333333336% - 54px);
-    grid-template-columns: repeat(3, calc(33.333333333333336% - 54px));
   }
 
   .u-section-1 .u-text-2 {
@@ -154,8 +151,7 @@
 
   .u-section-1 .u-repeater-1 {
     min-height: 791px;
-    grid-auto-columns: calc(50% - 40.5px);
-    grid-template-columns: repeat(2, calc(50% - 40.5px));
+    grid-template-columns: calc(50% - 40.5px) calc(50% - 40.5px);
   }
 }
 
@@ -174,7 +170,6 @@
   }
 
   .u-section-1 .u-repeater-1 {
-    grid-auto-columns: calc(100% - 0px);
     grid-template-columns: 100%;
   }
 }
@@ -186,9 +181,5 @@
 
   .u-section-1 .u-list-1 {
     width: 340px;
-  }
-
-  .u-section-1 .u-repeater-1 {
-    grid-auto-columns: 100%;
   }
 }

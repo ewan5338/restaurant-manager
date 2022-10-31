@@ -1,21 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.wantensoup.prototype.Home;
 
+import com.wantensoup.prototype.GetDateAPI.GetDateAPI;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  *
- * @author garca
+ * @author Kristin Cattell
  */
 @Controller
-public class HomeController {
+public class HomeController extends GetDateAPI{
     @GetMapping("")
-    public String viewHomePage() {
+    public String viewHomePage(Model model) throws URISyntaxException, IOException, InterruptedException {
+        model.addAttribute("dateAPI", parseAPI());
         return "index/index";
     }
     
