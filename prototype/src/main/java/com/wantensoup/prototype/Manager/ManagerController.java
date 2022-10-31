@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.wantensoup.prototype.Manager;
 
 import com.wantensoup.prototype.Employee.Employee;
@@ -16,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  *
- * @author garca
+ * @author Kristin Cattell
  */
 @Controller
 public class ManagerController {

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.wantensoup.prototype.Item;
 
 import javax.persistence.Column;
@@ -13,7 +9,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author garca
+ * @author Kristin Cattell
  */
 
 @Entity
@@ -25,18 +21,10 @@ public class Item {
     private long id;
     
     @Column(name = "Item")
-    private String item;
+    private String itemName;
     
     @Column(name = "Amount")
-    private long amount;
-
-    public Item(long id, String item, long amount) {
-        this.id = id;
-        this.item = item;
-        this.amount = amount;
-    }
-    
-    public Item() {}
+    private long itemQuantity;
 
     public long getId() {
         return id;
@@ -46,20 +34,19 @@ public class Item {
         this.id = id;
     }
 
-    public String getItem() {
-        return item;
+    public long getItemQuantity() {
+        return itemQuantity;
     }
 
-    public void setItem(String item) {
-        this.item = item;
+    public void setItemQuantity(long itemQuantity) {
+        this.itemQuantity = itemQuantity;
     }
 
-    public long getAmount() {
-        return amount;
+    public String getItemName() {
+        return itemName;
     }
 
-    public void setAmount(long amount) {
-        this.amount = amount;
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
-    
 }

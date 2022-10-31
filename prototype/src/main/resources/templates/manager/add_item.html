@@ -46,10 +46,10 @@
               <br>
               <form action="#" th:action="@{/saveItem}" th:object="${item}" 
                   method="post">
-                <input type="text" th:field="*{item}" placeholder="New Item" >
+                <input type="text" th:field="*{itemName}" placeholder="New Item" >
                 <br>
                 <br>
-                <input type="text" th:field="*{amount}" placeholder="Amount of Item" >
+                <input type="text" th:field="*{itemQuantity}" placeholder="Quantity" >
                 <br>
                 <br>
                 <div class="form-actions">

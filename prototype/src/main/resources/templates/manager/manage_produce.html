@@ -62,8 +62,8 @@
             <tbody class="u-table-body u-white u-table-body-1">
               <tr style="height: 0px;">
                     <tr th:each="Item : ${listItems}">
-                        <td th:text="${Item.item}" class="u-border-2 u-border-black u-table-cell"></td>
-                        <td th:text="${Item.amount}" class="u-border-2 u-border-black u-table-cell"></td>
+                        <td th:text="${Item.itemName}" class="u-border-2 u-border-black u-table-cell"></td>
+                        <td th:text="${Item.itemQuantity}" class="u-border-2 u-border-black u-table-cell"></td>
                         <td><a th:href="@{/updateItem/{id}(id=${Item.id})}"
                                class="btn btn-primary">Update</a>
                             <a th:href="@{/deleteItem/{id}(id=${Item.id})}"

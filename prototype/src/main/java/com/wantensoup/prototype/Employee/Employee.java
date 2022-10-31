@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.wantensoup.prototype.Employee;
 
 import com.wantensoup.prototype.User.Role;
@@ -16,7 +12,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author garca
+ * @author Atsoupe
  */
 
 @Entity
