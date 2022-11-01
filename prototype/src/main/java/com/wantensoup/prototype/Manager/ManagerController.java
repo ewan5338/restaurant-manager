@@ -1,8 +1,8 @@
 package com.wantensoup.prototype.Manager;
 
 /**
- * Last Updated: 10/18/2022 Class Purpose: Contains all the mappings to display
- * all manager HTML pages.
+ * Last Updated: 11/01/2022
+ * Class Purpose: Contains all the mappings to display all manager HTML pages.
  * @author Kristin Cattell
  */
 import com.wantensoup.prototype.Employee.Employee;
@@ -27,34 +27,34 @@ public class ManagerController {
     }
 
     @GetMapping("/manager/employees")
-    public String viewEmployeeList(Model model) {
-        model.addAttribute("listEmployees", employeeService.getAllEmployees());
+    public String viewEmployeeList(Model _model) {
+        _model.addAttribute("listEmployees", employeeService.getAllEmployees());
         return "manager/manage_employees";
     }
 
     @GetMapping("/manager/addNewEmployee")
-    public String addNewEmployee(Model model) {
+    public String addNewEmployee(Model _model) {
         Employee employee = new Employee();
-        model.addAttribute("employee", employee);
+        _model.addAttribute("employee", employee);
         return "manager/add_employee";
     }
 
     @PostMapping("/saveEmployee")
-    public String saveNewEmployee(@ModelAttribute("employee") Employee employee) {
-        employeeService.saveEmployee(employee);
+    public String saveNewEmployee(@ModelAttribute("employee") Employee _employee) {
+        employeeService.saveEmployee(_employee);
         return "redirect:/manager/employees";
     }
 
     @GetMapping("/updateEmployee/{id}")
-    public String updateEmployee(@PathVariable(value = "id") long id, Model model) {
-        Employee employee = employeeService.getEmployeeById(id);
-        model.addAttribute("employee", employee);
+    public String updateEmployee(@PathVariable(value = "id") long _id, Model _model) {
+        Employee employee = employeeService.getEmployeeById(_id);
+        _model.addAttribute("employee", employee);
         return "manager/update_employee";
     }
 
     @GetMapping("/deleteEmployee/{id}")
-    public String deleteEmployee(@PathVariable(value = "id") long id) {
-        this.employeeService.deleteEmployeeById(id);
+    public String deleteEmployee(@PathVariable(value = "id") long _id) {
+        this.employeeService.deleteEmployeeById(_id);
         return "redirect:/manager/employees";
     }
 

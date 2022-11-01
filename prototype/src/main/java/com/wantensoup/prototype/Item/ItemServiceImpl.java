@@ -1,8 +1,8 @@
 package com.wantensoup.prototype.Item;
 
 /**
- * Last Updated: 10/18/2022 Class Purpose: Implements the functionality of item
- * objects.
+ * Last Updated: 11/01/2022
+ * Class Purpose: Implements the functionality of item objects.
  * @author Kristin Cattell
  */
 import java.util.List;
@@ -22,28 +22,28 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public void saveItem(Item item) {
-        this.itemRepository.save(item);
+    public void saveItem(Item _item) {
+        this.itemRepository.save(_item);
     }
 
     @Override
-    public Item getItemById(long id) {
-        Optional<Item> optional = itemRepository.findById(id);
+    public Item getItemById(long _id) {
+        Optional<Item> optional = itemRepository.findById(_id);
         Item item = null;
 
         //Checks to see if an item is present within the "items" table.
         if (optional.isPresent()) {
             item = optional.get();
         } else {
-            throw new RuntimeException("Item not found for id: " + id);
+            throw new RuntimeException("Item not found for id: " + _id);
         }
 
         return item;
     }
 
     @Override
-    public void deleteItemById(long ID) {
-        this.itemRepository.deleteById(ID);
+    public void deleteItemById(long _id) {
+        this.itemRepository.deleteById(_id);
     }
 
 }

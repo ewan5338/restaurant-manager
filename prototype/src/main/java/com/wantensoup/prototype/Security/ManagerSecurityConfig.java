@@ -1,8 +1,9 @@
 package com.wantensoup.prototype.Security;
 
 /**
- * Last Updated: 10/17/2022 Class Purpose: Configures default Spring Security
- * rules to only allow managers to access "/manager/" pages.
+ * Last Updated: 11/01/2022
+ * Class Purpose: Configures default Spring Security rules to only allow 
+ * managers to access "/manager/" pages.
  * @author Kristin Cattell
  */
 import com.wantensoup.prototype.User.CustomUserDetailsService;
@@ -30,12 +31,12 @@ public class ManagerSecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain filterChain1(HttpSecurity http) throws Exception {
+    public SecurityFilterChain filterChain1(HttpSecurity _http) throws Exception {
         //Allows everyone to access the homepage.
-        http.authorizeRequests().antMatchers("/").permitAll();
+        _http.authorizeRequests().antMatchers("/").permitAll();
 
         //Allows only those with the role "MANAGER" in the "users" table to access "/manager/" pages.
-        http.antMatcher("/manager/**")
+        _http.antMatcher("/manager/**")
                 .authorizeRequests().anyRequest().hasAnyAuthority("MANAGER")
                 .and()
                 .formLogin()
@@ -48,7 +49,7 @@ public class ManagerSecurityConfig {
                 .logout().logoutUrl("/manager/logout")
                 .logoutSuccessUrl("/");
 
-        return http.build();
+        return _http.build();
     }
     
 }

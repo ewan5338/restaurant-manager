@@ -1,8 +1,8 @@
 package com.wantensoup.prototype.Item;
 
 /**
- * Last Updated: 10/31/2022 Class Purpose: Creates the table "items" and what
- * attributes the table holds.
+ * Last Updated: 10/31/2022
+ * Class Purpose: Creates the table "items" and what attributes the table holds.
  * @author Kristin Cattell
  */
 import javax.persistence.Column;
@@ -40,16 +40,16 @@ public class Item {
     }
 
     //=================  SETTERS ===============
-    public void setId(long id) {
-        this.id = id;
+    public void setId(long _id) {
+        this.id = _id;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setItemName(String _itemName) {
+        this.itemName = _itemName;
     }
 
-    public void setItemQuantity(long itemQuantity) {
-        this.itemQuantity = itemQuantity;
+    public void setItemQuantity(long _itemQuantity) {
+        this.itemQuantity = _itemQuantity;
     }
     
 }

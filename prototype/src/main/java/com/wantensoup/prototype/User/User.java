@@ -1,8 +1,8 @@
 package com.wantensoup.prototype.User;
 
 /**
- * Last Updated: 10/17/2022 Class Purpose: Creates the table "users" and what
- * attributes the table holds.
+ * Last Updated: 10/17/2022 
+ * Class Purpose: Creates the table "users" and what attributes the table holds.
  * @author Kristin Cattell
  */
 import javax.persistence.*;
@@ -51,20 +51,20 @@ public class User {
     }
 
     //=================  SETTERS ===============
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer _id) {
+        this.id = _id;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername(String _username) {
+        this.username = _username;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String _password) {
+        this.password = _password;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRole(Role _role) {
+        this.role = _role;
     }
     
 }

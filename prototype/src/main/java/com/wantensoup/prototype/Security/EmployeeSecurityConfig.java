@@ -1,8 +1,9 @@
 package com.wantensoup.prototype.Security;
 
 /**
- * Last Updated: 10/17/2022 Class Purpose: Configures default Spring Security
- * rules to only allow employees to access "/employee/" pages.
+ * Last Updated: 11/01/2022
+ * Class Purpose: Configures default Spring Security rules to only allow 
+ * employees to access "/employee/" pages.
  * @author Kristin Cattell
  */
 import org.springframework.context.annotation.Bean;
@@ -16,9 +17,9 @@ import org.springframework.security.web.SecurityFilterChain;
 public class EmployeeSecurityConfig {
 
     @Bean
-    public SecurityFilterChain filterChain2(HttpSecurity http) throws Exception {
+    public SecurityFilterChain filterChain2(HttpSecurity _http) throws Exception {
         //Allows only those with the role "EMPLOYEE" in the "users" table to access "/employee/" pages.
-        http.antMatcher("/employee/**")
+        _http.antMatcher("/employee/**")
                 .authorizeRequests().anyRequest().hasAnyAuthority("EMPLOYEE")
                 .and()
                 .formLogin()
@@ -31,7 +32,7 @@ public class EmployeeSecurityConfig {
                 .logout().logoutUrl("/employee/logout")
                 .logoutSuccessUrl("/");
 
-        return http.build();
+        return _http.build();
     }
     
 }
