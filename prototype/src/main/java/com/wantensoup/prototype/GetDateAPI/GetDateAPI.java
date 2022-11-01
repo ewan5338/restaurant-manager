@@ -23,7 +23,7 @@ public class GetDateAPI extends FormatDate {
         //Sends Http Request to the API.
         HttpRequest getRequest = HttpRequest.newBuilder()
                 .uri(new URI("https://world-clock.p.rapidapi.com/json/est/now"))
-                .headers("X-RapidAPI-Key", "4113e34ee0msh81c36da3c7bb166p1f439ejsn1e4374254c55",
+                .headers("X-RapidAPI-Key", "INSERT API KEY HERE",
                         "X-RapidAPI-Host", "world-clock.p.rapidapi.com")
                 .build();
 
