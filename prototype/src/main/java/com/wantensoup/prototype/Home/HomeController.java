@@ -1,8 +1,9 @@
 package com.wantensoup.prototype.Home;
 
 /**
- * Last Updated: 10/31/2022 Class Purpose: Contains all the mappings to display
- * the home page and the pages you can go to from the home page.
+ * Last Updated: 11/01/2022
+ * Class Purpose: Contains all the mappings to display the home page and the 
+ * pages you can go to from the home page.
  * @author Kristin Cattell
  */
 import com.wantensoup.prototype.GetDateAPI.GetDateAPI;
@@ -16,8 +17,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController extends GetDateAPI {
 
     @GetMapping("")
-    public String viewHomePage(Model model) throws URISyntaxException, IOException, InterruptedException {
-        model.addAttribute("dateAPI", parseAPI());
+    public String viewHomePage(Model _model) throws URISyntaxException, IOException, InterruptedException {
+        _model.addAttribute("dateAPI", parseAPI());
         return "index/index";
     }
 

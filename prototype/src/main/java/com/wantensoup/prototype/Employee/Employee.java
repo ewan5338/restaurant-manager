@@ -1,8 +1,9 @@
 package com.wantensoup.prototype.Employee;
 
 /**
- * Last Updated: 10/18/2022 Class Purpose: Creates the table "Employees" and
- * what attributes the table holds.
+ * Last Updated: 11/01/2022
+ * Class Purpose: Creates the table "Employees" and what attributes the table 
+ * holds.
  * @author Atsoupe Bessou Kpeglo
  */
 import com.wantensoup.prototype.User.Role;
@@ -71,32 +72,32 @@ public class Employee {
     }
 
     //=================  SETTERS ===============
-    public void setId(long id) {
-        this.id = id;
+    public void setId(long _id) {
+        this.id = _id;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setFullName(String _fullName) {
+        this.fullName = _fullName;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddress(String _address) {
+        this.address = _address;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String _email) {
+        this.email = _email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername(String _username) {
+        this.username = _username;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String _password) {
+        this.password = _password;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRole(Role _role) {
+        this.role = _role;
     }
     
 }

@@ -1,8 +1,9 @@
 package com.wantensoup.prototype.GetDateAPI;
 
 /**
- * Last Updated: 10/31/2022 Class Purpose: Calls an API that will then parse out
- * and format the current date and time.
+ * Last Updated: 11/01/2022
+ * Class Purpose: Calls an API that will then parse out and format the current 
+ * date and time.
  * @author Kristin Cattell
  */
 import com.google.gson.Gson;

@@ -1,8 +1,9 @@
 package com.wantensoup.prototype.GetDateAPI;
 
 /**
- * Last Updated: 10/31/2022 Class Purpose: Used to parse out the
- * "currentDateTime" from the API response body.
+ * Last Updated: 11/01/2022
+ * Class Purpose: Used to parse out the "currentDateTime" from the API response 
+ * body.
  * @author Kristin Cattell
  */
 public class Time {
@@ -15,8 +16,8 @@ public class Time {
     }
     
     //=================  SETTERS ===============
-    public void setCurrentDateTime(String currentDateTime) {
-        this.currentDateTime = currentDateTime;
+    public void setCurrentDateTime(String _currentDateTime) {
+        this.currentDateTime = _currentDateTime;
     }
 
 }

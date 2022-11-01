@@ -1,8 +1,8 @@
 package com.wantensoup.prototype.Employee;
 
 /**
- * Last Updated: 10/18/2022 Class Purpose: Contains all the mappings to display
- * all employee HTML pages.
+ * Last Updated: 11/01/2022
+ * Class Purpose: Contains all the mappings to display all employee HTML pages.
  * @author Atsoupe Bessou Kpeglo
  */
 import org.springframework.stereotype.Controller;

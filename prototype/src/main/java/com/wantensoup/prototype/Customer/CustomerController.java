@@ -1,8 +1,8 @@
 package com.wantensoup.prototype.Customer;
 
 /**
- * Last Updated: 10/18/2022 Class Purpose: Contains all the mappings to display
- * all customer HTML pages.
+ * Last Updated: 10/18/2022 
+ * Class Purpose: Contains all the mappings to display all customer HTML pages.
  * @author Ewan Allen
  */
 import org.springframework.stereotype.Controller;

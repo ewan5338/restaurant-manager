@@ -1,7 +1,8 @@
 package com.wantensoup.prototype;
 
 /**
- * CSC 340 Project: Wan-Ten Soup Restaurant Manager Last Updated: 10/31/2022
+ * CSC 340 Project: Wan-Ten Soup Restaurant Manager 
+ * Last Updated: 11/01/2022
  * Class Purpose: Holds the main method to run the program.
  * @authors Kristin Cattell, Ewan Allen, Atsoupe Bessou Kpeglo
  */
