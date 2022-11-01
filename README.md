@@ -8,7 +8,7 @@ xxx
 
 xxx
 
-## Description (100-word minimum)
+## Description
 
 The project we are developing is a restaurant POS System designed with the customer and ease of access in mind. 
 Its purpose is that it is designed to reduce consumer wait time by allowing the customer to place their own order for food. 
