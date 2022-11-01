@@ -1,5 +1,10 @@
 package com.wantensoup.prototype.Manager;
 
+/**
+ * Last Updated: 10/18/2022 Class Purpose: Contains all the mappings to display
+ * all manager HTML pages.
+ * @author Kristin Cattell
+ */
 import com.wantensoup.prototype.Employee.Employee;
 import com.wantensoup.prototype.Employee.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,21 +15,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-/**
- *
- * @author Kristin Cattell
- */
 @Controller
 public class ManagerController {
-    
+
     @Autowired
     private EmployeeService employeeService;
-    
+
     @GetMapping("/manager/home")
     public String viewManagerHomePage() {
         return "manager/managerhome";
     }
-    
+
     @GetMapping("/manager/employees")
     public String viewEmployeeList(Model model) {
         model.addAttribute("listEmployees", employeeService.getAllEmployees());
@@ -43,48 +44,48 @@ public class ManagerController {
         employeeService.saveEmployee(employee);
         return "redirect:/manager/employees";
     }
-    
+
     @GetMapping("/updateEmployee/{id}")
     public String updateEmployee(@PathVariable(value = "id") long id, Model model) {
         Employee employee = employeeService.getEmployeeById(id);
         model.addAttribute("employee", employee);
         return "manager/update_employee";
     }
-    
+
     @GetMapping("/deleteEmployee/{id}")
     public String deleteEmployee(@PathVariable(value = "id") long id) {
         this.employeeService.deleteEmployeeById(id);
         return "redirect:/manager/employees";
     }
-    
+
     @GetMapping("/manager/schedules")
     public String viewModifySchedules() {
         return "manager/modify_schedules";
     }
-    
+
     @GetMapping("/manager/order")
     public String makeOrders() {
         return "manager/order";
     }
-    
+
     @GetMapping("/manager/orderconfirm")
     public String orderConfirmed() {
         return "manager/order_confirm";
     }
-    
+
     @GetMapping("/manager/menu")
     public String viewMenuManager() {
         return "manager/manager_menu";
     }
-    
+
     @GetMapping("/manager/managemenu")
     public String manageMenu() {
         return "manager/edit_menu";
     }
-    
+
     @GetMapping("/manager/editbox")
     public String editBox() {
         return "manager/edit_box";
     }
-  
+
 }

@@ -1,5 +1,10 @@
 package com.wantensoup.prototype.Item;
 
+/**
+ * Last Updated: 10/31/2022 Class Purpose: Creates the table "items" and what
+ * attributes the table holds.
+ * @author Kristin Cattell
+ */
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,46 +12,44 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- *
- * @author Kristin Cattell
- */
-
 @Entity
 @Table(name = "items")
 public class Item {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    
+
     @Column(name = "Item")
     private String itemName;
-    
+
     @Column(name = "Amount")
     private long itemQuantity;
 
+    //=================  GETTERS ===============
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getItemQuantity() {
-        return itemQuantity;
-    }
-
-    public void setItemQuantity(long itemQuantity) {
-        this.itemQuantity = itemQuantity;
     }
 
     public String getItemName() {
         return itemName;
     }
 
+    public long getItemQuantity() {
+        return itemQuantity;
+    }
+
+    //=================  SETTERS ===============
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public void setItemName(String itemName) {
         this.itemName = itemName;
     }
+
+    public void setItemQuantity(long itemQuantity) {
+        this.itemQuantity = itemQuantity;
+    }
+    
 }
