@@ -18,7 +18,7 @@ public class HomeController extends GetDateAPI {
 
     @GetMapping("")
     public String viewHomePage(Model _model) throws URISyntaxException, IOException, InterruptedException {
-        _model.addAttribute("dateAPI", parseAPI());
+        //_model.addAttribute("dateAPI", parseAPI());
         return "index/index";
     }
 

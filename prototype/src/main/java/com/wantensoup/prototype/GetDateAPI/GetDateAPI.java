@@ -21,19 +21,20 @@ public class GetDateAPI extends FormatDate {
         Gson gson = new Gson();
         String date, dateSubstring;
 
-        //Sends Http Request to the API.
+        //Creates a new Http Request to the API.
         HttpRequest getRequest = HttpRequest.newBuilder()
                 .uri(new URI("https://world-clock.p.rapidapi.com/json/est/now"))
-                .headers("X-RapidAPI-Key", "INSERT API KEY HERE",
+                .headers("X-RapidAPI-Key", "411..............................",
                         "X-RapidAPI-Host", "world-clock.p.rapidapi.com")
                 .build();
-
+        
+        //Sends the http request.
         HttpClient httpClient = HttpClient.newHttpClient();
 
-        //Gets the reponse from the API.
+        //Gets the response from the API.
         HttpResponse<String> getResponse = httpClient.send(getRequest, HttpResponse.BodyHandlers.ofString());
 
-        //Converts the reponse from Json to String and parses out the current date and time into String date.
+        //Converts the response body from Json to String and parse out the current date and time into String date.
         time = gson.fromJson(getResponse.body(), Time.class);
         date = time.getCurrentDateTime();
 

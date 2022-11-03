@@ -5,11 +5,19 @@ package com.wantensoup.prototype.Employee;
  * Class Purpose: Contains all the mappings to display all employee HTML pages.
  * @author Atsoupe Bessou Kpeglo
  */
+import com.wantensoup.prototype.Table.RestTables;
+import com.wantensoup.prototype.Table.TableService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class EmployeeController {
+    
+    @Autowired
+    private TableService tableService;
 
     @GetMapping("/employee/home")
     public String viewEmployeeHomePage() {
@@ -22,8 +30,16 @@ public class EmployeeController {
     }
 
     @GetMapping("/employee/tables")
-    public String manageTables() {
+    public String manageTables(Model model) {
+        model.addAttribute("listTables", tableService.getAllTables());
         return "employee/manage_tables";
+    }
+    
+    @GetMapping("employee/updateTable")
+    public String updateTableStatus(@PathVariable (value = "number") long number, Model model) {
+        RestTables table = tableService.getTableById(number);
+        model.addAttribute("table", table);
+        return "INSERT HTML HERE";
     }
 
     @GetMapping("/employee/info")
