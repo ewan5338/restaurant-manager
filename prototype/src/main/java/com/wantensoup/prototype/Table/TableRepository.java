@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author garca
+ * @author Atsoupe Bessou Kpeglo
  */
 @Repository
 public interface TableRepository extends JpaRepository<RestTables, Long>{

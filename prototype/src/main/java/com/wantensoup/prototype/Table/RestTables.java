@@ -3,7 +3,7 @@ package com.wantensoup.prototype.Table;
 /**
  * Last Updated: 10/31/2022
  * Class Purpose: Creates the table "items" and what attributes the table holds.
- * @author Kristin Cattell
+ * @author Atsoupe Bessou
  */
 import javax.persistence.Column;
 import javax.persistence.Entity;

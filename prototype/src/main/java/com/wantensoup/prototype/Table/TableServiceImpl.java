@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author garca
+ * @author Atsoupe Bessou kpeglo
  */
 @Service
 public class TableServiceImpl implements TableService{

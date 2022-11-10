@@ -1,8 +1,9 @@
 package com.wantensoup.prototype.Employee;
 
 /**
- * Last Updated: 11/01/2022
- * Class Purpose: Contains all the mappings to display all employee HTML pages.
+ * Last Updated: 11/09/2022 Class Purpose: Contains all the mappings to display
+ * all employee HTML pages.
+ *
  * @author Atsoupe Bessou Kpeglo
  */
 import com.wantensoup.prototype.Table.RestTables;
@@ -11,11 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class EmployeeController {
-    
+
     @Autowired
     private TableService tableService;
 
@@ -29,17 +32,24 @@ public class EmployeeController {
         return "employee/view_orders";
     }
 
-    @GetMapping("/employee/tables")
+    @GetMapping("/employee/manage_tables")
     public String manageTables(Model model) {
         model.addAttribute("listTables", tableService.getAllTables());
-        return "employee/manage_tables";
+        return "employee/restTables";
     }
-    
-    @GetMapping("employee/updateTable")
-    public String updateTableStatus(@PathVariable (value = "number") long number, Model model) {
-        RestTables table = tableService.getTableById(number);
+
+    @GetMapping("/tableStatusUpdate/{id}")
+    public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) {
+        //get employee from the service
+        RestTables table = tableService.getTableById(id);
         model.addAttribute("table", table);
-        return "INSERT HTML HERE";
+        return "employee/restTable_update";
+    }
+
+    @PostMapping("/saveTable")
+    public String saveTableStatus(@ModelAttribute("table") RestTables _table) {
+        tableService.saveTable(_table);
+        return "redirect:/employee/manage_tables";
     }
 
     @GetMapping("/employee/info")
@@ -56,5 +66,5 @@ public class EmployeeController {
     public String viewSchedule() {
         return "employee/employee_sched";
     }
-    
+
 }
