@@ -70,7 +70,20 @@ public class ManagerController {
     @GetMapping("/manager/schedules")
     public String viewModifySchedules(Model _model) {
         _model.addAttribute("listSchedules", scheduleService.getAllSchedules());
-        return "schedule/modify_schedules";
+        return "schedule/schedules";
+    }
+    
+     @GetMapping("/updateSchedule/{id}")
+    public String updateSchedule(@PathVariable(value = "id") long _id, Model _model) {
+        Schedule schedule = scheduleService.getScheduleById(_id);
+        _model.addAttribute("schedule", schedule);
+        return "schedule/update_schedules";
+    }
+    
+    @PostMapping("/saveSchedule")
+    public String saveSchedule(@ModelAttribute("schedule") Schedule _schedule) {
+        scheduleService.saveSchedule(_schedule);
+        return "redirect:/manager/schedules";
     }
 
     @GetMapping("/manager/order")
