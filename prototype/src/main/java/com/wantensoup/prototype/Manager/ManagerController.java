@@ -1,12 +1,14 @@
 package com.wantensoup.prototype.Manager;
 
 /**
- * Last Updated: 11/01/2022
+ * Last Updated: 11/10/2022
  * Class Purpose: Contains all the mappings to display all manager HTML pages.
  * @author Kristin Cattell
  */
 import com.wantensoup.prototype.Employee.Employee;
 import com.wantensoup.prototype.Employee.EmployeeService;
+import com.wantensoup.prototype.Schedule.Schedule;
+import com.wantensoup.prototype.Schedule.ScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +22,9 @@ public class ManagerController {
 
     @Autowired
     private EmployeeService employeeService;
+    
+    @Autowired
+    private ScheduleService scheduleService;
 
     @GetMapping("/manager/home")
     public String viewManagerHomePage() {
@@ -42,6 +47,10 @@ public class ManagerController {
     @PostMapping("/saveEmployee")
     public String saveNewEmployee(@ModelAttribute("employee") Employee _employee) {
         employeeService.saveEmployee(_employee);
+        Schedule schedule = new Schedule();
+        schedule.setEmployeeId(_employee.getId());
+        schedule.setEmployeeName(_employee.getFullName());
+        scheduleService.saveSchedule(schedule);
         return "redirect:/manager/employees";
     }
 
@@ -59,8 +68,9 @@ public class ManagerController {
     }
 
     @GetMapping("/manager/schedules")
-    public String viewModifySchedules() {
-        return "manager/modify_schedules";
+    public String viewModifySchedules(Model _model) {
+        _model.addAttribute("listSchedules", scheduleService.getAllSchedules());
+        return "schedule/modify_schedules";
     }
 
     @GetMapping("/manager/order")
