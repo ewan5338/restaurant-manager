@@ -17,11 +17,7 @@ import javax.persistence.Table;
 public class Schedule {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    @Column(name = "employee_id")
-    private long employeeId;
 
     @Column(name = "employee_name")
     private String employeeName;
@@ -47,10 +43,6 @@ public class Schedule {
     //=================  GETTERS ===============
     public long getId() {
         return id;
-    }
-
-    public long getEmployeeId() {
-        return employeeId;
     }
 
     public String getEmployeeName() {
@@ -84,10 +76,6 @@ public class Schedule {
     //=================  SETTERS ===============
     public void setId(long id) {
         this.id = id;
-    }
-
-    public void setEmployeeId(long employeeId) {
-        this.employeeId = employeeId;
     }
 
     public void setEmployeeName(String employeeName) {

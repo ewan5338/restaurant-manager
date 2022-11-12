@@ -47,26 +47,25 @@
                 <form action="#" th:action="@{/saveSchedule}" th:object="${schedule}" 
                   method="post">
                 <input type="hidden" th:field="*{id}" />
-                <input type="hidden" th:field="*{employeeId}">
                 <input type="hidden" th:field="*{employeeName}">
                 <br>
                 <br>
-                <input type="text" th:field="*{monday}">
+                <input type="text" th:field="*{monday}" placeholder="Monday">
                 <br>
                 <br>
-                <input type="text" th:field="*{tuesday}">
+                <input type="text" th:field="*{tuesday}" placeholder="Tuesday">
                 <br>
                 <br>
-                <input type="text" th:field="*{wednesday}">
+                <input type="text" th:field="*{wednesday}" placeholder="Wednesday">
                 <br>
                 <br>
-                <input type="text" th:field="*{thursday}">
+                <input type="text" th:field="*{thursday}" placeholder="Thursday">
                 <br>
                 <br>
-                <input type="text" th:field="*{friday}">
+                <input type="text" th:field="*{friday}" placeholder="Friday">
                 <br>
                 <br>
-                <input type="text" th:field="*{saturday}">
+                <input type="text" th:field="*{saturday}" placeholder="Saturday">
                 <br>
                 <br>
                 <button type="submit" class="btn btn-info col-2">Update</button>

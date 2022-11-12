@@ -9,6 +9,8 @@ import com.wantensoup.prototype.Employee.Employee;
 import com.wantensoup.prototype.Employee.EmployeeService;
 import com.wantensoup.prototype.Schedule.Schedule;
 import com.wantensoup.prototype.Schedule.ScheduleService;
+import com.wantensoup.prototype.User.User;
+import com.wantensoup.prototype.User.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +27,9 @@ public class ManagerController {
     
     @Autowired
     private ScheduleService scheduleService;
+    
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/manager/home")
     public String viewManagerHomePage() {
@@ -48,9 +53,15 @@ public class ManagerController {
     public String saveNewEmployee(@ModelAttribute("employee") Employee _employee) {
         employeeService.saveEmployee(_employee);
         Schedule schedule = new Schedule();
-        schedule.setEmployeeId(_employee.getId());
+        schedule.setId(_employee.getId());
         schedule.setEmployeeName(_employee.getFullName());
         scheduleService.saveSchedule(schedule);
+        User user = new User();
+        user.setId(_employee.getId());
+        user.setUsername(_employee.getUsername());
+        user.setPassword(_employee.getPassword());
+        user.setRole(_employee.getRole());
+        userService.saveUser(user);
         return "redirect:/manager/employees";
     }
 
@@ -64,6 +75,8 @@ public class ManagerController {
     @GetMapping("/deleteEmployee/{id}")
     public String deleteEmployee(@PathVariable(value = "id") long _id) {
         this.employeeService.deleteEmployeeById(_id);
+        this.scheduleService.deleteScheduleById(_id);
+        this.userService.deleteUserById(_id);
         return "redirect:/manager/employees";
     }
 
