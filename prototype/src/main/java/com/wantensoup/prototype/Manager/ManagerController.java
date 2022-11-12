@@ -7,6 +7,8 @@ package com.wantensoup.prototype.Manager;
  */
 import com.wantensoup.prototype.Employee.Employee;
 import com.wantensoup.prototype.Employee.EmployeeService;
+import com.wantensoup.prototype.Menu.Menu;
+import com.wantensoup.prototype.Menu.MenuService;
 import com.wantensoup.prototype.Schedule.Schedule;
 import com.wantensoup.prototype.Schedule.ScheduleService;
 import com.wantensoup.prototype.ScheduleDate.ScheduleDate;
@@ -35,6 +37,9 @@ public class ManagerController {
     
     @Autowired
     private ScheduleDateService scheduleDateService;
+    
+    @Autowired
+    private MenuService menuService;
 
     @GetMapping("/manager/home")
     public String viewManagerHomePage() {
@@ -129,13 +134,41 @@ public class ManagerController {
     }
 
     @GetMapping("/manager/menu")
-    public String viewMenuManager() {
+    public String viewMenuManager(Model _model) {
+        _model.addAttribute("listMenuItems", menuService.getAllMenuItems());
         return "manager/manager_menu";
     }
 
     @GetMapping("/manager/managemenu")
-    public String manageMenu() {
-        return "manager/edit_menu";
+    public String manageMenu(Model _model) {
+        _model.addAttribute("listMenuItems", menuService.getAllMenuItems());
+        return "menuItems/menu";
+    }
+    
+    @GetMapping("/manager/addNewMenuItem")
+    public String addNewMenuItem(Model _model) {
+        Menu menu = new Menu();
+        _model.addAttribute("menu", menu);
+        return "menuItems/add_menuItem";
+    }
+    
+    @GetMapping("/updateMenuItem/{id}")
+    public String updateMenuItem(@PathVariable(value = "id") long _id, Model _model) {
+        Menu menu = menuService.getMenuItemById(_id);
+        _model.addAttribute("menu", menu);
+        return "menuItems/update_menuItem";
+    }
+    
+    @PostMapping("/saveMenuItem")
+    public String saveMenuItem(@ModelAttribute("menu") Menu _menu) {
+        menuService.saveMenuItem(_menu);
+        return "redirect:/manager/managemenu";
+    }
+    
+    @GetMapping("/deleteMenuItem/{id}")
+    public String deleteMenuItem(@PathVariable(value = "id") long _id) {
+        this.menuService.deleteMenuItemById(_id);
+        return "redirect:/manager/managemenu";
     }
 
     @GetMapping("/manager/editbox")
