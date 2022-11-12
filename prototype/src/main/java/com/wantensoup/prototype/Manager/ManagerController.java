@@ -1,7 +1,7 @@
 package com.wantensoup.prototype.Manager;
 
 /**
- * Last Updated: 11/10/2022
+ * Last Updated: 11/11/2022
  * Class Purpose: Contains all the mappings to display all manager HTML pages.
  * @author Kristin Cattell
  */
@@ -9,6 +9,8 @@ import com.wantensoup.prototype.Employee.Employee;
 import com.wantensoup.prototype.Employee.EmployeeService;
 import com.wantensoup.prototype.Schedule.Schedule;
 import com.wantensoup.prototype.Schedule.ScheduleService;
+import com.wantensoup.prototype.ScheduleDate.ScheduleDate;
+import com.wantensoup.prototype.ScheduleDate.ScheduleDateService;
 import com.wantensoup.prototype.User.User;
 import com.wantensoup.prototype.User.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +32,9 @@ public class ManagerController {
     
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private ScheduleDateService scheduleDateService;
 
     @GetMapping("/manager/home")
     public String viewManagerHomePage() {
@@ -81,12 +86,13 @@ public class ManagerController {
     }
 
     @GetMapping("/manager/schedules")
-    public String viewModifySchedules(Model _model) {
+    public String viewModifySchedules(Model _model, Model _model2) {
         _model.addAttribute("listSchedules", scheduleService.getAllSchedules());
+        _model2.addAttribute("listScheduleDate", scheduleDateService.getAllScheduleDates());
         return "schedule/schedules";
     }
     
-     @GetMapping("/updateSchedule/{id}")
+    @GetMapping("/updateSchedule/{id}")
     public String updateSchedule(@PathVariable(value = "id") long _id, Model _model) {
         Schedule schedule = scheduleService.getScheduleById(_id);
         _model.addAttribute("schedule", schedule);
@@ -96,6 +102,19 @@ public class ManagerController {
     @PostMapping("/saveSchedule")
     public String saveSchedule(@ModelAttribute("schedule") Schedule _schedule) {
         scheduleService.saveSchedule(_schedule);
+        return "redirect:/manager/schedules";
+    }
+    
+    @GetMapping("/updateScheduleDate/{id}")
+    public String updateScheduleDate(@PathVariable(value = "id") long _id, Model _model) {
+        ScheduleDate schedule = scheduleDateService.getScheduleDateById(_id);
+        _model.addAttribute("schedule", schedule);
+        return "schedule/update_schedDate";
+    }
+    
+    @PostMapping("/saveScheduleDate")
+    public String saveScheduleDate(@ModelAttribute("schedule") ScheduleDate _schedule) {
+        scheduleDateService.saveScheduleDate(_schedule);
         return "redirect:/manager/schedules";
     }
 

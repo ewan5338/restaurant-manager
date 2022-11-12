@@ -47,8 +47,8 @@
                   <col width="100%">
                 </colgroup>
                 <tbody class="u-align-center u-custom-font u-table-body u-table-body-1">
-                  <tr style="height: 79px;">
-                    <td class="u-table-cell">November 22, 2022 - November 29, 2022</td>
+                  <tr th:each="ScheduleDate : ${listScheduleDate}" style="height: 79px;">
+                    <td th:text="${ScheduleDate.date}" class="u-table-cell"></td>
                   </tr>
                 </tbody>
               </table>
@@ -60,7 +60,7 @@
                 </colgroup>
                 <tbody class="u-align-center u-custom-font u-table-body u-table-body-2">
                   <tr style="height:0px;">
-                    <td class="u-table-cell"><a href="http://localhost:8080/manager/menu"
+                    <td class="u-table-cell"><a href="http://localhost:8080/updateScheduleDate/1"
                                class="btn btn-primary">Update</a></td>
                   </tr>
                 </tbody>
