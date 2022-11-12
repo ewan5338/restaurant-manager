@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Manage Employees</title>
-    <link rel="stylesheet" href="/managerEmployeeList/nicepage.css" media="screen">
-<link rel="stylesheet" href="/managerEmployeeList/Page-4.css" media="screen">
-    <script class="u-script" type="text/javascript" src="/managerEmployeeList/jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="/managerEmployeeList/nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 4.19.3, nicepage.com">
+    <title>Manage Menu</title>
+    <link rel="stylesheet" href="/managerMenuEdit/nicepage.css" media="screen">
+<link rel="stylesheet" href="/managerMenuEdit/Page-1.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/managerMenuEdit/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/managerMenuEdit/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 4.21.12, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue:400">
     
@@ -24,56 +24,147 @@
 		"name": ""
 }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Page 4">
+    <meta property="og:title" content="Page 1">
     <meta property="og:type" content="website">
   </head>
-  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-grey-80 u-header u-header" id="sec-14f1"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-custom-font u-text u-text-1">Wan-Ten Soup </p>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-grey-80 u-header u-header" id="sec-848c"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-custom-font u-text u-text-default u-text-1">Wan-ten soup</p>
         <form th:action="@{/manager/logout}" method="post">
         <input type="submit" value="Logout" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-1"/>
         </form>
         <a href="http://localhost:8080/manager/menu" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-2">Menu</a>
         <a href="http://localhost:8080/manager/home" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-3">Back</a>
+        <a href="http://localhost:8080/manager/addNewMenuItem" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-4">Add New Menu Item</a>
       </div></header>
-    <section class="u-clearfix u-gradient u-section-1" id="sec-e068">
+    <section class="u-clearfix u-gradient u-section-1" id="sec-7da0">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-container-style u-expanded-width u-grey-80 u-group u-shape-rectangle u-group-1">
+        <div class="u-align-center u-container-style u-grey-80 u-group u-shape-rectangle u-group-1">
           <div class="u-container-layout u-container-layout-1">
-            <p class="u-align-center u-custom-font u-text u-text-default u-text-1">Menu</p>
-            <a th:href = "@{/manager/addNewMenuItem}" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-1">Add Employee</a>
+            <p class="u-align-center u-custom-font u-text u-text-default u-text-1">Meals</p>
           </div>
         </div>
-        <div class="u-black u-container-style u-expanded-width u-group u-shape-rectangle u-group-2">
-          <div class="u-container-layout u-container-layout-2">
-            <p class="u-custom-font u-text u-text-default u-text-2">Full Name</p>
-            <p class="u-custom-font u-text u-text-default u-text-3">Username</p>
-            <p class="u-custom-font u-text u-text-default u-text-4">Email</p>
-            <p class="u-custom-font u-text u-text-default u-text-5">Address</p>
-            <p class="u-custom-font u-text u-text-default u-text-6">Password</p>
-            <p class="u-custom-font u-text u-text-default u-text-7">ID</p>
-          </div>
-        </div>
-        <div class="u-expanded-width u-table u-table-responsive u-table-1">
+        <div class="u-table u-table-responsive u-table-1">
           <table class="u-table-entity">
             <colgroup>
-              <col width="7.4%">
-              <col width="16.1%">
-              <col width="16.1%">
-              <col width="16.2%">
-              <col width="16%">
-              <col width="16%">
-              <col width="12.2%">
+              <col width="49.5%">
+              <col width="18.3%">
+              <col width="32.2%">
             </colgroup>
+            <thead class="u-align-center u-black u-table-header u-table-header-1">
+              <tr style="height: 50px;">
+                <th class="u-border-1 u-border-black u-table-cell">Item</th>
+                <th class="u-border-1 u-border-black u-table-cell">Price</th>
+                <th class="u-border-1 u-border-black u-table-cell">Actions</th>
+              </tr>
+            </thead>
             <tbody class="u-align-center u-table-body u-white u-table-body-1">
+              <tr style="height: 0px;">
+               <tr th:each="Menu : ${listMenuItems}" th:if ="${Menu.itemType == 'Custom'}">
+                        <td th:text="${Menu.menuItem}" class="u-border-1 u-border-black u-table-cell"></td>
+                        <td th:text="${Menu.price}" class="u-border-1 u-border-black u-table-cell"></td>
+                        <td><a th:href="@{/updateMenuItem/{id}(id=${Menu.id})}"
+                               class="btn btn-dark btn-sm">Update</a>
+                            <a th:href="@{/deleteMenuItem/{id}(id=${Menu.id})}"
+                               class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+               </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="u-table u-table-responsive u-table-2">
+          <table class="u-table-entity">
+            <colgroup>
+              <col width="49.5%">
+              <col width="18.3%">
+              <col width="32.2%">
+            </colgroup>
+            <thead class="u-align-center u-black u-table-header u-table-header-2">
+              <tr style="height: 50px;">
+                <th class="u-border-1 u-border-black u-table-cell">Item</th>
+                <th class="u-border-1 u-border-black u-table-cell">Price</th>
+                <th class="u-border-1 u-border-black u-table-cell">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="u-align-center u-table-body u-white u-table-body-2">
+              <tr style="height: 0px;">
+               <tr th:each="Menu : ${listMenuItems}" th:if ="${Menu.itemType == 'Dessert'}">
+                        <td th:text="${Menu.menuItem}" class="u-border-1 u-border-black u-table-cell"></td>
+                        <td th:text="${Menu.price}" class="u-border-1 u-border-black u-table-cell"></td>
+                        <td><a th:href="@{/updateMenuItem/{id}(id=${Menu.id})}"
+                               class="btn btn-dark btn-sm">Update</a>
+                            <a th:href="@{/deleteMenuItem/{id}(id=${Menu.id})}"
+                               class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+               </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="u-table u-table-responsive u-table-3">
+          <table class="u-table-entity">
+            <colgroup>
+              <col width="49.5%">
+              <col width="18.3%">
+              <col width="32.2%">
+            </colgroup>
+            <thead class="u-align-center u-black u-table-header u-table-header-3">
+              <tr style="height: 50px;">
+                <th class="u-border-1 u-border-black u-table-cell">Item</th>
+                <th class="u-border-1 u-border-black u-table-cell">Price</th>
+                <th class="u-border-1 u-border-black u-table-cell">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="u-align-center u-table-body u-white u-table-body-3">
               <tr style="height: 0px;">
                <tr th:each="Menu : ${listMenuItems}" th:if ="${Menu.itemType == 'Meal'}">
                         <td th:text="${Menu.menuItem}" class="u-border-1 u-border-black u-table-cell"></td>
                         <td th:text="${Menu.price}" class="u-border-1 u-border-black u-table-cell"></td>
-                        <td th:text="${Menu.itemType}" class="u-border-1 u-border-black u-table-cell"></td>
                         <td><a th:href="@{/updateMenuItem/{id}(id=${Menu.id})}"
-                               class="btn btn-primary">Update</a>
+                               class="btn btn-dark btn-sm">Update</a>
                             <a th:href="@{/deleteMenuItem/{id}(id=${Menu.id})}"
-                               class="btn btn-danger">Delete</a>
+                               class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+               </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="u-align-center u-container-style u-grey-80 u-group u-shape-rectangle u-group-2">
+          <div class="u-container-layout u-container-layout-2">
+            <p class="u-align-center u-custom-font u-text u-text-default u-text-2">Custom</p>
+          </div>
+        </div>
+        <div class="u-align-center u-container-style u-grey-80 u-group u-shape-rectangle u-group-3">
+          <div class="u-container-layout u-container-layout-3">
+            <p class="u-align-center u-custom-font u-text u-text-default u-text-3">Dessert</p>
+          </div>
+        </div>
+        <div class="u-align-center u-container-style u-grey-80 u-group u-shape-rectangle u-group-4">
+          <div class="u-container-layout u-container-layout-4">
+            <p class="u-align-center u-custom-font u-text u-text-default u-text-4">Drinks</p>
+          </div>
+        </div>
+        <div class="u-table u-table-responsive u-table-4">
+          <table class="u-table-entity">
+            <colgroup>
+              <col width="49.5%">
+              <col width="18.3%">
+              <col width="32.2%">
+            </colgroup>
+            <thead class="u-align-center u-black u-table-header u-table-header-4">
+              <tr style="height: 50px;">
+                <th class="u-border-1 u-border-black u-table-cell">Item</th>
+                <th class="u-border-1 u-border-black u-table-cell">Price</th>
+                <th class="u-border-1 u-border-black u-table-cell">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="u-align-center u-table-body u-white u-table-body-4">
+              <tr style="height: 0px;">
+               <tr th:each="Menu : ${listMenuItems}" th:if ="${Menu.itemType == 'Drink'}">
+                        <td th:text="${Menu.menuItem}" class="u-border-1 u-border-black u-table-cell"></td>
+                        <td th:text="${Menu.price}" class="u-border-1 u-border-black u-table-cell"></td>
+                        <td><a th:href="@{/updateMenuItem/{id}(id=${Menu.id})}"
+                               class="btn btn-dark btn-sm">Update</a>
+                            <a th:href="@{/deleteMenuItem/{id}(id=${Menu.id})}"
+                               class="btn btn-danger btn-sm">Delete</a>
                         </td>
                </tr>
             </tbody>
@@ -82,15 +173,17 @@
       </div>
     </section>
     
+    
+    
     <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/html-templates" target="_blank">
-        <span>HTML Website Templates</span>
+      <a class="u-link" href="https://nicepage.com/css-templates" target="_blank">
+        <span>Free CSS Templates</span>
       </a>
       <p class="u-text">
         <span>created with</span>
       </p>
-      <a class="u-link" href="https://nicepage.com/html-website-builder" target="_blank">
-        <span>HTML Builder</span>
+      <a class="u-link" href="https://nicepage.cloud" target="_blank">
+        <span>Best Website Builder</span>
       </a>. 
     </section>
   

@@ -6,6 +6,7 @@ package com.wantensoup.prototype.Employee;
  *
  * @author Atsoupe Bessou Kpeglo
  */
+import com.wantensoup.prototype.Menu.MenuService;
 import com.wantensoup.prototype.Table.RestTables;
 import com.wantensoup.prototype.Table.TableService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class EmployeeController {
 
     @Autowired
     private TableService tableService;
+    
+    @Autowired
+    private MenuService menuService;
 
     @GetMapping("/employee/home")
     public String viewEmployeeHomePage() {
@@ -56,9 +60,10 @@ public class EmployeeController {
     public String viewEmployeeInfo() {
         return "employee/view_info";
     }
-
+    
     @GetMapping("/employee/menu")
-    public String viewMenu() {
+    public String viewMenu(Model _model) {
+        _model.addAttribute("listMenuItems", menuService.getAllMenuItems());
         return "employee/employee_menu";
     }
 

@@ -5,12 +5,18 @@ package com.wantensoup.prototype.Customer;
  * Class Purpose: Contains all the mappings to display all customer HTML pages.
  * @author Ewan Allen
  */
+import com.wantensoup.prototype.Menu.MenuService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class CustomerController {
-
+    
+    @Autowired
+    private MenuService menuService;
+    
     @GetMapping("/customer/home")
     public String viewCustomerDashboard() {
         return "customer/customerDash";
@@ -40,9 +46,10 @@ public class CustomerController {
     public String payWithCard() {
         return "customer/withcard";
     }
-
+    
     @GetMapping("/customer/menu")
-    public String viewMenu() {
+    public String viewMenu(Model _model) {
+        _model.addAttribute("listMenuItems", menuService.getAllMenuItems());
         return "customer/menu";
     }
     

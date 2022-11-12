@@ -38624,7 +38624,17 @@ a.u-link.u-text-hover-grey-90:hover {
   font-size: 0.875rem;
   letter-spacing: 1px;
   background-image: none;
-  margin: -42px auto 18px 25px;
+  margin: -42px auto 0 25px;
+}
+
+.u-header .u-btn-4 {
+  border-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  background-image: none;
+  margin: -42px auto 0;
 }
 @media (max-width: 1199px) {
   .u-header .u-btn-1 {
