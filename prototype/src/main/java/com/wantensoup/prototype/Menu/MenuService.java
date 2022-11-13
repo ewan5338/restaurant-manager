@@ -13,8 +13,8 @@ public interface MenuService {
 
     void saveMenuItem(Menu _item);
 
-    Menu getMenuItemById(long _id);
+    Menu getMenuItemById(Integer _id);
 
-    void deleteMenuItemById(long _id);
+    void deleteMenuItemById(Integer _id);
     
 }

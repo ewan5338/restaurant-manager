@@ -15,13 +15,13 @@ import javax.persistence.Table;
 public class ScheduleDate {
 
     @Id
-    private long id;
+    private Integer id;
 
     @Column(name = "date")
     private String date;
 
     //=================  GETTERS ===============
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -30,7 +30,7 @@ public class ScheduleDate {
     }
     
     //=================  SETTERS ===============
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -9,13 +9,18 @@ import com.wantensoup.prototype.Employee.Employee;
 import com.wantensoup.prototype.Employee.EmployeeService;
 import com.wantensoup.prototype.Menu.Menu;
 import com.wantensoup.prototype.Menu.MenuService;
+import com.wantensoup.prototype.OrderItems.OrderItems;
+import com.wantensoup.prototype.OrderItems.OrderItemsService;
 import com.wantensoup.prototype.Schedule.Schedule;
 import com.wantensoup.prototype.Schedule.ScheduleService;
 import com.wantensoup.prototype.ScheduleDate.ScheduleDate;
 import com.wantensoup.prototype.ScheduleDate.ScheduleDateService;
 import com.wantensoup.prototype.User.User;
 import com.wantensoup.prototype.User.UserService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,9 +45,32 @@ public class ManagerController {
     
     @Autowired
     private MenuService menuService;
+    
+    @Autowired
+    private OrderItemsService orderItemsService;
 
     @GetMapping("/manager/home")
     public String viewManagerHomePage() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName();
+        //System.out.println(name);
+        Integer managerId = null;
+        List<Employee> list = employeeService.getAllEmployees();
+        for (Employee employee : list) {
+            if(employee.getUsername().equals(name)) {
+                managerId = employee.getId();
+            }
+        }
+        //System.out.println(managerId);
+        
+        //List<OrderItems> parsedMenu = null;
+        List<OrderItems> cartItems = orderItemsService.getAllItems();
+        //for(OrderItems employee : cartItems) {
+        //    if(employee.getManagerId().equals(managerId)) {
+        //        parsedMenu.add(employee);
+        //   }
+        //}
+        //System.out.println(cartItems);
         return "manager/managerhome";
     }
 
@@ -76,14 +104,14 @@ public class ManagerController {
     }
 
     @GetMapping("/updateEmployee/{id}")
-    public String updateEmployee(@PathVariable(value = "id") long _id, Model _model) {
+    public String updateEmployee(@PathVariable(value = "id") Integer _id, Model _model) {
         Employee employee = employeeService.getEmployeeById(_id);
         _model.addAttribute("employee", employee);
         return "manager/update_employee";
     }
 
     @GetMapping("/deleteEmployee/{id}")
-    public String deleteEmployee(@PathVariable(value = "id") long _id) {
+    public String deleteEmployee(@PathVariable(value = "id") Integer _id) {
         this.employeeService.deleteEmployeeById(_id);
         this.scheduleService.deleteScheduleById(_id);
         this.userService.deleteUserById(_id);
@@ -98,7 +126,7 @@ public class ManagerController {
     }
     
     @GetMapping("/updateSchedule/{id}")
-    public String updateSchedule(@PathVariable(value = "id") long _id, Model _model) {
+    public String updateSchedule(@PathVariable(value = "id") Integer _id, Model _model) {
         Schedule schedule = scheduleService.getScheduleById(_id);
         _model.addAttribute("schedule", schedule);
         return "schedule/update_schedules";
@@ -111,7 +139,7 @@ public class ManagerController {
     }
     
     @GetMapping("/updateScheduleDate/{id}")
-    public String updateScheduleDate(@PathVariable(value = "id") long _id, Model _model) {
+    public String updateScheduleDate(@PathVariable(value = "id") Integer _id, Model _model) {
         ScheduleDate schedule = scheduleDateService.getScheduleDateById(_id);
         _model.addAttribute("schedule", schedule);
         return "schedule/update_schedDate";
@@ -153,7 +181,7 @@ public class ManagerController {
     }
     
     @GetMapping("/updateMenuItem/{id}")
-    public String updateMenuItem(@PathVariable(value = "id") long _id, Model _model) {
+    public String updateMenuItem(@PathVariable(value = "id") Integer _id, Model _model) {
         Menu menu = menuService.getMenuItemById(_id);
         _model.addAttribute("menu", menu);
         return "menuItems/update_menuItem";
@@ -166,7 +194,7 @@ public class ManagerController {
     }
     
     @GetMapping("/deleteMenuItem/{id}")
-    public String deleteMenuItem(@PathVariable(value = "id") long _id) {
+    public String deleteMenuItem(@PathVariable(value = "id") Integer _id) {
         this.menuService.deleteMenuItemById(_id);
         return "redirect:/manager/managemenu";
     }

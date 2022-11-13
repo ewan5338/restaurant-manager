@@ -12,12 +12,12 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    private long id;
+    private Integer id;
 
     @Column(nullable = false, unique = true, length = 40)
     private String username;
 
-    @Column(nullable = false, unique = true, length = 10)
+    @Column(nullable = false, unique = true, length = 40)
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -33,7 +33,7 @@ public class User {
     }
 
     //=================  GETTERS ===============
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -50,7 +50,7 @@ public class User {
     }
 
     //=================  SETTERS ===============
-    public void setId(long _id) {
+    public void setId(Integer _id) {
         this.id = _id;
     }
 

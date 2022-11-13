@@ -17,8 +17,8 @@ public interface TableService {
     
     void saveTable (RestTables table);
     
-    RestTables getTableById(long id);
+    RestTables getTableById(Integer id);
     
-    void deleteTableByNumber(long number);
+    void deleteTableByNumber(Integer number);
     
 }

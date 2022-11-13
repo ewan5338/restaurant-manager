@@ -1,4 +1,4 @@
-package com.wantensoup.prototype.Item;
+package com.wantensoup.prototype.OrderItems;
 
 /**
  * Last Updated: 11/01/2022
@@ -11,25 +11,25 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ItemServiceImpl implements ItemService {
+public class OrderItemsServiceImpl implements OrderItemsService {
 
     @Autowired
-    private ItemRepository itemRepository;
+    private OrderItemsRepository itemRepository;
 
     @Override
-    public List<Item> getAllItems() {
+    public List<OrderItems> getAllItems() {
         return itemRepository.findAll();
     }
 
     @Override
-    public void saveItem(Item _item) {
+    public void saveItem(OrderItems _item) {
         this.itemRepository.save(_item);
     }
 
     @Override
-    public Item getItemById(Integer _id) {
-        Optional<Item> optional = itemRepository.findById(_id);
-        Item item = null;
+    public OrderItems getItemById(Integer _id) {
+        Optional<OrderItems> optional = itemRepository.findById(_id);
+        OrderItems item = null;
 
         //Checks to see if an item is present within the "items" table.
         if (optional.isPresent()) {

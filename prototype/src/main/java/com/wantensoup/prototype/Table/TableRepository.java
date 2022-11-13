@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
  * @author Atsoupe Bessou Kpeglo
  */
 @Repository
-public interface TableRepository extends JpaRepository<RestTables, Long>{
+public interface TableRepository extends JpaRepository<RestTables, Integer>{
     
      public RestTables findByTableName(String _tableName);
      

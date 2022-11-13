@@ -43,7 +43,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/tableStatusUpdate/{id}")
-    public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) {
+    public String showFormForUpdate(@PathVariable(value = "id") Integer id, Model model) {
         //get employee from the service
         RestTables table = tableService.getTableById(id);
         model.addAttribute("table", table);

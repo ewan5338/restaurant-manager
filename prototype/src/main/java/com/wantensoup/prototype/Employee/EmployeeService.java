@@ -13,8 +13,8 @@ public interface EmployeeService {
 
     void saveEmployee(Employee _employee);
 
-    Employee getEmployeeById(long _id);
+    Employee getEmployeeById(Integer _id);
 
-    void deleteEmployeeById(long _id);
+    void deleteEmployeeById(Integer _id);
     
 }

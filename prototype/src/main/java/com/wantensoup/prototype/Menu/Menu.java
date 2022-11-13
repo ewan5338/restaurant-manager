@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.wantensoup.prototype.Menu;
-import com.wantensoup.prototype.Customer.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +20,7 @@ public class Menu {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
 
     @Column(name = "item")
     private String menuItem;
@@ -33,7 +32,7 @@ public class Menu {
     private String itemType;
 
     //=================  GETTERS ===============
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -50,7 +49,7 @@ public class Menu {
     }
     
     //=================  SETTERS ===============
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

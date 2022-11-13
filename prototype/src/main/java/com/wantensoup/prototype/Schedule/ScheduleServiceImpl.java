@@ -27,7 +27,7 @@ public class ScheduleServiceImpl implements ScheduleService {
     }
 
     @Override
-    public Schedule getScheduleById(long _id) {
+    public Schedule getScheduleById(Integer _id) {
         Optional<Schedule> optional = scheduleRepository.findById(_id);
         Schedule schedule = null;
 
@@ -41,7 +41,7 @@ public class ScheduleServiceImpl implements ScheduleService {
     }
 
     @Override
-    public void deleteScheduleById(long _id) {
+    public void deleteScheduleById(Integer _id) {
         this.scheduleRepository.deleteById(_id);
     }
 }

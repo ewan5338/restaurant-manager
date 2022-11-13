@@ -1,4 +1,4 @@
-package com.wantensoup.prototype.Item;
+package com.wantensoup.prototype.OrderItems;
 
 /**
  * Last Updated: 10/18/2022 
@@ -7,13 +7,13 @@ package com.wantensoup.prototype.Item;
  */
 import java.util.List;
 
-public interface ItemService {
+public interface OrderItemsService {
 
-    List<Item> getAllItems();
+    List<OrderItems> getAllItems();
 
-    void saveItem(Item _item);
+    void saveItem(OrderItems _item);
 
-    Item getItemById(Integer _id);
+    OrderItems getItemById(Integer _id);
 
     void deleteItemById(Integer _id);
     

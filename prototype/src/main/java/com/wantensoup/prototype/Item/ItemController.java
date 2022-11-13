@@ -40,14 +40,14 @@ public class ItemController {
     }
 
     @GetMapping("/updateItem/{id}")
-    public String updateItem(@PathVariable(value = "id") long _id, Model _model) {
+    public String updateItem(@PathVariable(value = "id") Integer _id, Model _model) {
         Item item = itemService.getItemById(_id);
         _model.addAttribute("item", item);
         return "manager/update_item";
     }
 
     @GetMapping("/deleteItem/{id}")
-    public String deleteItem(@PathVariable(value = "id") long _id) {
+    public String deleteItem(@PathVariable(value = "id") Integer _id) {
         this.itemService.deleteItemById(_id);
         return "redirect:/manager/produce";
     }

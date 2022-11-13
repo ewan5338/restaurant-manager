@@ -13,8 +13,8 @@ public interface ScheduleService {
 
     void saveSchedule(Schedule _schedule);
 
-    Schedule getScheduleById(long _id);
+    Schedule getScheduleById(Integer _id);
 
-    void deleteScheduleById(long _id);
+    void deleteScheduleById(Integer _id);
     
 }

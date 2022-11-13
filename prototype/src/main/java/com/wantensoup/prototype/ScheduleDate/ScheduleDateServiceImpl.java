@@ -27,7 +27,7 @@ public class ScheduleDateServiceImpl implements ScheduleDateService {
     }
 
     @Override
-    public ScheduleDate getScheduleDateById(long _id) {
+    public ScheduleDate getScheduleDateById(Integer _id) {
         Optional<ScheduleDate> optional = scheduleDateRepository.findById(_id);
         ScheduleDate schedule = null;
 

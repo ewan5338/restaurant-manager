@@ -18,7 +18,7 @@ public class RestTables {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
 
     @Column(name = "Table_Name")
     private String tableName;
@@ -27,7 +27,7 @@ public class RestTables {
     private String tableStatus;
 
     //=================  GETTERS ===============
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -40,7 +40,7 @@ public class RestTables {
     }
 
     //=================  SETTERS ===============
-    public void setId(long _id) {
+    public void setId(Integer _id) {
         this.id = _id;
     }
 

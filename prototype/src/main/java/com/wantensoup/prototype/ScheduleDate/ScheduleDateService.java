@@ -13,6 +13,6 @@ public interface ScheduleDateService {
 
     void saveScheduleDate(ScheduleDate _schedule);
 
-    ScheduleDate getScheduleDateById(long _id);
+    ScheduleDate getScheduleDateById(Integer _id);
  
 }

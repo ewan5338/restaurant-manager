@@ -22,15 +22,15 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
 
-    @Column(name = "Full_Name")
+    @Column(name = "full_name")
     private String fullName;
 
-    @Column(name = "Address")
+    @Column(name = "address")
     private String address;
 
-    @Column(name = "Email")
+    @Column(name = "email")
     private String email;
 
     @Column(nullable = false, unique = true, length = 40)
@@ -43,7 +43,7 @@ public class Employee {
     private Role role;
 
     //=================  GETTERS ===============
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -72,7 +72,7 @@ public class Employee {
     }
 
     //=================  SETTERS ===============
-    public void setId(long _id) {
+    public void setId(Integer _id) {
         this.id = _id;
     }
 

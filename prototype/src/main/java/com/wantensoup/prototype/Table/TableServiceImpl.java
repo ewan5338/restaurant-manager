@@ -30,7 +30,7 @@ public class TableServiceImpl implements TableService{
     }
 
     @Override
-    public RestTables getTableById(long number) {
+    public RestTables getTableById(Integer number) {
         Optional<RestTables> optional = tableRepository.findById(number);
         RestTables table = null;
         
@@ -43,7 +43,7 @@ public class TableServiceImpl implements TableService{
     }
 
     @Override
-    public void deleteTableByNumber(long number) {
+    public void deleteTableByNumber(Integer number) {
         
     }
     

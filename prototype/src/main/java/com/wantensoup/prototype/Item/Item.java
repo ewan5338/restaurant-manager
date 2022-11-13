@@ -18,16 +18,16 @@ public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
 
-    @Column(name = "Item")
+    @Column(name = "item")
     private String itemName;
 
-    @Column(name = "Amount")
-    private long itemQuantity;
+    @Column(name = "amount")
+    private Integer itemQuantity;
 
     //=================  GETTERS ===============
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -35,12 +35,12 @@ public class Item {
         return itemName;
     }
 
-    public long getItemQuantity() {
+    public Integer getItemQuantity() {
         return itemQuantity;
     }
 
     //=================  SETTERS ===============
-    public void setId(long _id) {
+    public void setId(Integer _id) {
         this.id = _id;
     }
 
@@ -48,7 +48,7 @@ public class Item {
         this.itemName = _itemName;
     }
 
-    public void setItemQuantity(long _itemQuantity) {
+    public void setItemQuantity(Integer _itemQuantity) {
         this.itemQuantity = _itemQuantity;
     }
     

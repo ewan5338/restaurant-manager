@@ -13,8 +13,8 @@ public interface UserService {
 
     void saveUser(User _schedule);
 
-    User getUserById(long _id);
+    User getUserById(Integer _id);
 
-    void deleteUserById(long _id);
+    void deleteUserById(Integer _id);
     
 }
