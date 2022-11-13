@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>View Placed Orders</title>
+    <link rel="stylesheet" href="/managerPlacedOrders/nicepage.css" media="screen">
+<link rel="stylesheet" href="/managerPlacedOrders/Page-2.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/managerPlacedOrders/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/managerPlacedOrders/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 4.21.12, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue:400">
+    
+    <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+              crossorigin="anonymous">
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Page 2">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-grey-80 u-header u-header" id="sec-848c"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-custom-font u-text u-text-default u-text-1">Wan-ten soup</p>
+        <form th:action="@{/manager/logout}" method="post">
+        <input type="submit" value="Logout" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-1"/>
+        </form>
+        <a href="http://localhost:8080/manager/menu" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-2">Menu</a>
+        <a href="http://localhost:8080/manager/order" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-3">Back</a>
+      </div></header>
+    <section class="u-clearfix u-gradient u-section-1" id="sec-b32d">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-align-center u-container-style u-grey-80 u-group u-shape-rectangle u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <p class="u-align-center u-custom-font u-text u-text-default u-text-1">Orders Placed</p>
+          </div>
+        </div>
+        <div class="u-table u-table-responsive u-table-1">
+          <table class="u-table-entity">
+            <colgroup>
+              <col width="31%">
+              <col width="32%">
+              <col width="15.7%">
+              <col width="21.3%">
+            </colgroup>
+            <thead class="u-align-center u-black u-table-header u-table-header-1">
+              <tr style="height: 73px;">
+                <th class="u-border-2 u-border-black u-table-cell u-table-cell-1">Manager Name</th>
+                <th class="u-border-2 u-border-black u-table-cell u-table-cell-2">Item Ordered</th>
+                <th class="u-border-2 u-border-black u-table-cell u-table-cell-3">Quantity</th>
+                <th class="u-border-2 u-border-black u-table-cell u-table-cell-4"></th>
+              </tr>
+            </thead>
+            <tbody class="u-align-center u-table-body u-white u-table-body-1">
+              <tr style="height: 0px;">
+               <tr th:each="Orders : ${orders}" th:if ="${Orders.status == 'Ordered'}">
+                        <td th:text="${Orders.managerName}" class="u-border-1 u-border-black u-table-cell"></td>
+                        <td th:text="${Orders.itemName}" class="u-border-1 u-border-black u-table-cell"></td>
+                        <td th:text="${Orders.quantity}" class="u-border-1 u-border-black u-table-cell"></td>
+                        <td>
+                            <a th:href="@{/deletePlacedOrder/{id}(id=${Orders.id})}"
+                               class="btn btn-danger">Delete</a>
+                        </td>
+               </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-mockup" target="_blank">
+        <span>Website Mockup</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="" target="_blank">
+        <span>Website Builder Software</span>
+      </a>. 
+    </section>
+  
+</body></html>

@@ -20,6 +20,7 @@ import com.wantensoup.prototype.User.UserService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -151,13 +152,26 @@ public class ManagerController {
         return "redirect:/manager/schedules";
     }
 
-    @GetMapping("/manager/order")
-    public String makeOrders() {
-        return "manager/order";
-    }
-
     @GetMapping("/manager/orderconfirm")
-    public String orderConfirmed() {
+    public String orderConfirmed(@AuthenticationPrincipal Authentication auth) {
+        auth = SecurityContextHolder.getContext().getAuthentication();
+        String managerName = auth.getName();
+        List<OrderItems> cartItems = orderItemsService.getAllItems();
+        List<Employee> list = employeeService.getAllEmployees();
+        
+        for (Employee employee : list) {
+            if(employee.getUsername().equals(managerName)) {
+                managerName = employee.getFullName();
+            }
+        }
+        
+        for (OrderItems items : cartItems) {
+            if(items.getStatus().equals("Ordering") && items.getManagerName().equals(managerName)) {
+                items.setStatus("Ordered");
+                orderItemsService.saveItem(items);
+            }
+        }
+        
         return "manager/order_confirm";
     }
 

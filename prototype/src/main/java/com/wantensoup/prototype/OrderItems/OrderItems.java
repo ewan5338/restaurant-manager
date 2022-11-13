@@ -26,8 +26,14 @@ public class OrderItems {
     @Column(name = "manager_id")
     private Integer managerId;
     
+    @Column(name = "manager_name")
+    private String managerName;
+    
     @Column(name = "item_name")
     private String itemName;
+    
+    @Column(name = "status")
+    private String status;
 
     private Integer quantity;
 
@@ -44,8 +50,16 @@ public class OrderItems {
         return managerId;
     }
 
+    public String getManagerName() {
+        return managerName;
+    }
+
     public String getItemName() {
         return itemName;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public Integer getQuantity() {
@@ -65,8 +79,16 @@ public class OrderItems {
         this.managerId = managerId;
     }
 
+    public void setManagerName(String managerName) {
+        this.managerName = managerName;
+    }
+
     public void setItemName(String itemName) {
         this.itemName = itemName;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public void setQuantity(Integer quantity) {
