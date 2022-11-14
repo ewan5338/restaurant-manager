@@ -59,7 +59,6 @@ public class EmployeeController {
 
     @GetMapping("/tableStatusUpdate/{id}")
     public String showFormForUpdate(@PathVariable(value = "id") Integer id, Model model) {
-        //get employee from the service
         RestTables table = tableService.getTableById(id);
         model.addAttribute("table", table);
         return "employee/restTable_update";
@@ -71,6 +70,21 @@ public class EmployeeController {
         return "redirect:/employee/manage_tables";
     }
 
+     @GetMapping("/tableCalls/{id}")
+    public String showTableCalls(@PathVariable(value = "id") Integer id, Model model) {
+        //get employee from the service
+        RestTables table = tableService.getTableById(id);
+        model.addAttribute("table", table);
+        return "employee/restTable_update";
+    }
+
+   // @PostMapping("/saveTable")
+    //public String saveCalls(@ModelAttribute("calls") RestTables _calls) {
+       // tableService.saveTable(_calls);
+       // return "redirect:/employee/manage_tables";
+    //}
+    
+    
     @GetMapping("/employee/info")
     public String viewEmployeeInfo(Model _model, Model _model2, @AuthenticationPrincipal Authentication auth) {
         auth = SecurityContextHolder.getContext().getAuthentication();

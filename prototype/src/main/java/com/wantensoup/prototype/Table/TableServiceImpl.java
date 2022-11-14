@@ -29,6 +29,10 @@ public class TableServiceImpl implements TableService{
         this.tableRepository.save(table);
     }
 
+    //public void saveCalls(RestTables calls) {
+        //this.tableRepository.save(calls);
+    //}
+    
     @Override
     public RestTables getTableById(Integer number) {
         Optional<RestTables> optional = tableRepository.findById(number);
