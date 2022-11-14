@@ -47,6 +47,7 @@
             <p class="u-align-center u-custom-font u-text u-text-2">Status</p>
             <p class="u-align-center u-custom-font u-text u-text-3">Table</p>
             <p class="u-align-center u-custom-font u-text u-text-4">Action</p>
+             <p class="u-align-center u-custom-font u-text u-text-4">Calls</p>
           </div>
         </div>
         <div class="u-table u-table-responsive u-table-1">
@@ -62,7 +63,9 @@
               <tr th:each ="RestTable : ${listTables}">
                     <td th:text="${RestTable.tableName}" class="u-border-2 u-border-black u-table-cell"></td>
                     <td th:text="${RestTable.tableStatus}" class="u-border-2 u-border-black u-table-cell"></td>
+                    <td th:text="${RestTable.calls}" class="u-border-2 u-border-black u-table-cell"></td>
                     <td> <a th:href="@{/tableStatusUpdate/{id}(id=${RestTable.id})}" class="btn btn-primary">Update</a>
+                    <td> <a th:href="@{/tableCalls/{id}(id=${RestTable.id})}" class="btn btn-primary">Call</a>   
                     </td>
               </tr>
 

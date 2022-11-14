@@ -25,6 +25,9 @@ public class RestTables {
 
     @Column(name = "Table_Status")
     private String tableStatus;
+    
+    @Column(name = "Calls_For_Service")
+    private String calls;
 
     //=================  GETTERS ===============
     public Integer getId() {
@@ -38,6 +41,10 @@ public class RestTables {
     public String getTableStatus() {
         return tableStatus;
     }
+    
+    public String getCalls(){
+        return calls;
+    }
 
     //=================  SETTERS ===============
     public void setId(Integer _id) {
@@ -50,6 +57,10 @@ public class RestTables {
 
     public void setTableStatus(String _tableStatus) {
         this.tableStatus = _tableStatus;
+    }
+    
+    public void setCalls(String _calls){
+        this.calls = _calls;
     }
     
 }
