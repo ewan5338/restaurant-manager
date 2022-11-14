@@ -32,6 +32,9 @@ public class Employee {
 
     @Column(name = "email")
     private String email;
+    
+    @Column(name = "payrate")
+    private String payRate;
 
     @Column(nullable = false, unique = true, length = 40)
     private String username;
@@ -57,6 +60,10 @@ public class Employee {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getPayRate() {
+        return payRate;
     }
 
     public String getUsername() {
@@ -86,6 +93,10 @@ public class Employee {
 
     public void setEmail(String _email) {
         this.email = _email;
+    }
+
+    public void setPayRate(String payRate) {
+        this.payRate = payRate;
     }
 
     public void setUsername(String _username) {

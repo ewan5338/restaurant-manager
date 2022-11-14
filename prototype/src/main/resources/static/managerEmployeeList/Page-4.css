@@ -31,8 +31,7 @@
   font-size: 0.875rem;
   letter-spacing: 1px;
   background-image: none;
-  margin: -69px auto 0 13px;
-  padding: 10px 45px 10px 43px;
+  margin: -69px auto 0 47px;
 }
 
 .u-section-1 .u-group-2 {
@@ -50,37 +49,37 @@
 .u-section-1 .u-text-2 {
   font-family: "Bebas Neue";
   font-size: 1.25rem;
-  margin: 11px auto 0 133px;
+  margin: 11px auto 0 214px;
 }
 
 .u-section-1 .u-text-3 {
   font-family: "Bebas Neue";
   font-size: 1.25rem;
-  margin: -32px 365px 0 auto;
+  margin: -32px 290px 0 auto;
 }
 
 .u-section-1 .u-text-4 {
   font-family: "Bebas Neue";
   font-size: 1.25rem;
-  margin: -30px auto 0 511px;
+  margin: -32px 151px 0 auto;
 }
 
 .u-section-1 .u-text-5 {
   font-family: "Bebas Neue";
   font-size: 1.25rem;
-  margin: -32px auto 0 315px;
+  margin: -32px 464px 0 auto;
 }
 
 .u-section-1 .u-text-6 {
   font-family: "Bebas Neue";
   font-size: 1.25rem;
-  margin: -32px 184px 0 auto;
+  margin: -32px auto 0 411px;
 }
 
 .u-section-1 .u-text-7 {
   font-family: "Bebas Neue";
   font-size: 1.25rem;
-  margin: -32px auto 0 28px;
+  margin: -32px auto 0 47px;
 }
 
 .u-section-1 .u-table-1 {
@@ -118,30 +117,26 @@
     padding-bottom: 10px;
   }
 
-  .u-section-1 .u-text-3 {
-    margin-right: 299px;
-  }
-
-  .u-section-1 .u-text-4 {
-    margin-left: 419px;
-  }
-
   .u-section-1 .u-text-5 {
-    margin-left: 258px;
+    margin-right: 381px;
+  }
+
+  .u-section-1 .u-text-6 {
+    margin-left: 337px;
   }
 }
 
 @media (max-width: 991px) {
   .u-section-1 .u-text-3 {
-    margin-right: 227px;
-  }
-
-  .u-section-1 .u-text-4 {
-    margin-left: 318px;
+    margin-right: 220px;
   }
 
   .u-section-1 .u-text-5 {
-    margin-left: 196px;
+    margin-right: 289px;
+  }
+
+  .u-section-1 .u-text-6 {
+    margin-left: 256px;
   }
 }
 
@@ -156,41 +151,41 @@
     padding-right: 10px;
   }
 
-  .u-section-1 .u-text-3 {
-    margin-right: 171px;
+  .u-section-1 .u-text-2 {
+    margin-left: 161px;
   }
 
-  .u-section-1 .u-text-4 {
-    margin-left: 240px;
+  .u-section-1 .u-text-3 {
+    margin-right: 166px;
   }
 
   .u-section-1 .u-text-5 {
-    margin-left: 148px;
+    margin-right: 218px;
   }
 
   .u-section-1 .u-text-6 {
-    margin-right: 139px;
+    margin-left: 193px;
   }
 }
 
 @media (max-width: 575px) {
   .u-section-1 .u-text-2 {
-    margin-left: 82px;
+    margin-left: 99px;
   }
 
   .u-section-1 .u-text-3 {
-    margin-right: 105px;
+    margin-right: 102px;
   }
 
   .u-section-1 .u-text-4 {
-    margin-left: 148px;
+    margin-right: 93px;
   }
 
   .u-section-1 .u-text-5 {
-    margin-left: 91px;
+    margin-right: 134px;
   }
 
   .u-section-1 .u-text-6 {
-    margin-right: 86px;
+    margin-left: 119px;
   }
 }

@@ -45,38 +45,38 @@
         </div>
         <div class="u-black u-container-style u-expanded-width u-group u-shape-rectangle u-group-2">
           <div class="u-container-layout u-container-layout-2">
-            <p class="u-custom-font u-text u-text-default u-text-2">Full Name</p>
-            <p class="u-custom-font u-text u-text-default u-text-3">Username</p>
-            <p class="u-custom-font u-text u-text-default u-text-4">Email</p>
-            <p class="u-custom-font u-text u-text-default u-text-5">Address</p>
-            <p class="u-custom-font u-text u-text-default u-text-6">Password</p>
-            <p class="u-custom-font u-text u-text-default u-text-7">ID</p>
+            <p class="u-custom-font u-text u-text-default u-text-2">Address</p>
+            <p class="u-custom-font u-text u-text-default u-text-3">Password</p>
+            <p class="u-custom-font u-text u-text-default u-text-4">Pay Rate</p>
+            <p class="u-custom-font u-text u-text-default u-text-5">Username</p>
+            <p class="u-custom-font u-text u-text-default u-text-6">Email</p>
+            <p class="u-custom-font u-text u-text-default u-text-7">Name</p>
           </div>
         </div>
         <div class="u-expanded-width u-table u-table-responsive u-table-1">
           <table class="u-table-entity">
             <colgroup>
-              <col width="7.4%">
-              <col width="16.1%">
-              <col width="16.1%">
-              <col width="16.2%">
-              <col width="16%">
-              <col width="16%">
+              <col width="14.6%">
+              <col width="15.9%">
+              <col width="17.1%">
+              <col width="15.3%">
+              <col width="14.8%">
+              <col width="10.1%">
               <col width="12.2%">
             </colgroup>
             <tbody class="u-align-center u-table-body u-white u-table-body-1">
               <tr style="height: 0px;">
                <tr th:each="Employee : ${listEmployees}">
-                        <td th:text="${Employee.id}" class="u-border-1 u-border-black u-table-cell"></td>
                         <td th:text="${Employee.fullName}" class="u-border-1 u-border-black u-table-cell"></td>
                         <td th:text="${Employee.address}" class="u-border-1 u-border-black u-table-cell"></td>
                         <td th:text="${Employee.email}" class="u-border-1 u-border-black u-table-cell"></td>
                         <td th:text="${Employee.username}" class="u-border-1 u-border-black u-table-cell"></td>
                         <td th:text="${Employee.password}" class="u-border-1 u-border-black u-table-cell"></td>
+                        <td th:text="${Employee.payRate}" class="u-border-1 u-border-black u-table-cell"></td>
                         <td><a th:href="@{/updateEmployee/{id}(id=${Employee.id})}"
-                               class="btn btn-primary">Update</a>
+                               class="btn btn-dark btn-sm">Update</a>
                             <a th:href="@{/deleteEmployee/{id}(id=${Employee.id})}"
-                               class="btn btn-danger">Delete</a>
+                               class="btn btn-danger btn-sm">Delete</a>
                         </td>
                </tr>
             </tbody>

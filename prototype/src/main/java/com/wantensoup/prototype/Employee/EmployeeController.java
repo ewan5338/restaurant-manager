@@ -7,9 +7,15 @@ package com.wantensoup.prototype.Employee;
  * @author Atsoupe Bessou Kpeglo
  */
 import com.wantensoup.prototype.Menu.MenuService;
+import com.wantensoup.prototype.Schedule.ScheduleService;
+import com.wantensoup.prototype.ScheduleDate.ScheduleDateService;
 import com.wantensoup.prototype.Table.RestTables;
 import com.wantensoup.prototype.Table.TableService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +31,15 @@ public class EmployeeController {
     
     @Autowired
     private MenuService menuService;
+    
+    @Autowired
+    private EmployeeService employeeService;
+    
+    @Autowired
+    private ScheduleService scheduleService;
+    
+    @Autowired
+    private ScheduleDateService scheduleDateService;
 
     @GetMapping("/employee/home")
     public String viewEmployeeHomePage() {
@@ -57,7 +72,20 @@ public class EmployeeController {
     }
 
     @GetMapping("/employee/info")
-    public String viewEmployeeInfo() {
+    public String viewEmployeeInfo(Model _model, Model _model2, @AuthenticationPrincipal Authentication auth) {
+        auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName();
+        Integer employeeId = null;
+        List<Employee> list = employeeService.getAllEmployees();
+        
+        for (Employee employee : list) {
+            if(employee.getUsername().equals(name)) {
+                employeeId = employee.getId();
+            }
+        }
+        
+        _model.addAttribute("employeeInfo", employeeService.getAllEmployees());
+        _model2.addAttribute("employeeId", employeeId);
         return "employee/view_info";
     }
     
@@ -68,7 +96,21 @@ public class EmployeeController {
     }
 
     @GetMapping("/employee/schedule")
-    public String viewSchedule() {
+    public String viewSchedule(Model _model, Model _model2, Model _model3, @AuthenticationPrincipal Authentication auth) {
+        auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName();
+        Integer employeeId = null;
+        List<Employee> list = employeeService.getAllEmployees();
+        
+        for (Employee employee : list) {
+            if(employee.getUsername().equals(name)) {
+                employeeId = employee.getId();
+            }
+        }
+        
+        _model.addAttribute("employeeInfo", scheduleService.getAllSchedules());
+        _model2.addAttribute("employeeId", employeeId);
+        _model3.addAttribute("scheduleWeek", scheduleDateService.getScheduleDateById(1));
         return "employee/employee_sched";
     }
 
