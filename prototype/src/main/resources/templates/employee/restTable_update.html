@@ -48,16 +48,17 @@
                                   method="post">
                                 <input type="hidden" th:field="*{id}" />
                                 <br>
-                                <br>
                                 <input type="hidden" th:field="*{tableName}">
+                                <p>
+                                    <b>Table Status:</b>&nbsp;&nbsp; <input type="text" th:field="*{tableStatus}">
                                 <br>
                                 <br>
-                                <input type="text" th:field="*{tableStatus}">
+                                <br>
+                                    <b>Call of Service Status:</b>&nbsp;&nbsp; <input type="text" th:field="*{calls}">
                                 <br>
                                 <br>
-                                <input type="text" th:field="*{calls}">
                                 <br>
-                                <br>
+                                </p>
                                 <button type="submit" class="btn btn-info col-2">Update</button>
                             </form>
                         </div>
