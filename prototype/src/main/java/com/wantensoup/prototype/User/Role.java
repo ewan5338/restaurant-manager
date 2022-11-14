@@ -7,5 +7,5 @@ package com.wantensoup.prototype.User;
  * @author Kristin Cattell
  */
 public enum Role {
-    MANAGER, EMPLOYEE
+    MANAGER, EMPLOYEE, TABLE
 }

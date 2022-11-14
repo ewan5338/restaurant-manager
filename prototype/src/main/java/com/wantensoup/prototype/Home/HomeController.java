@@ -41,6 +41,11 @@ public class HomeController extends GetDateAPI {
     public String viewEmployeeLoginPage() {
         return "employee/employeelogin";
     }
+    
+    @GetMapping("/customer/login")
+    public String viewTableLoginPage() {
+        return "customer/tablelogin";
+    }
 
     @GetMapping("/forgotpass")
     public String forgotPass() {

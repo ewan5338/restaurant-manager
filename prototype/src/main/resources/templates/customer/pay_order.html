@@ -2,74 +2,70 @@
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="Account Login">
     <meta name="description" content="">
-    <title>Pay Order</title>
+    <title>Pay For Order</title>
     <link rel="stylesheet" href="/customer_payorder/nicepage.css" media="screen">
-<link rel="stylesheet" href="/customer_payorder/Page-4.css" media="screen">
-    <script class="u-script" type="text/javascript" src="/customer_payorder/jquery.js" defer=""></script>
+<link rel="stylesheet" href="/customer_payorder/Home-1.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/customer_payorder/jquery-1.9.1.min.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/customer_payorder/nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 4.19.3, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <meta name="generator" content="Nicepage 4.21.13, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue:400">
     
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script th:src="@{/managerOrderItems/quantity_control.js}"></script>
+    
+    <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+              crossorigin="anonymous">
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": ""
 }</script>
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Page 4">
+    <meta name="theme-color" content="#2f65f5">
+    <meta property="og:title" content="Home 1">
     <meta property="og:type" content="website">
   </head>
-  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-grey-80 u-header u-header" id="sec-9c6a"><div class="u-align-left u-clearfix u-sheet u-sheet-1">
-        <p class="u-custom-font u-text u-text-default u-text-1">Wan-Ten SOup</p>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-grey-80 u-header u-header" id="sec-a6d6"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-custom-font u-text u-text-default u-text-1">Wan-Ten Soup</p>
         <a href="http://localhost:8080/customer/home" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-1">Back</a>
         <a href="http://localhost:8080/customer/menu" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-2">Menu</a>
-      </div></header>
-    <section class="u-clearfix u-gradient u-section-1" id="sec-bad7">
+      </div></header> 
+    <section class="u-clearfix u-gradient u-section-1" id="sec-0f1e">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-container-style u-grey-80 u-group u-shape-rectangle u-group-1">
+        <div class="u-grey-80 u-shape u-shape-rectangle u-shape-1"></div>
+        <p class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-1">Order Summary</p>
+        <div class="u-border-1 u-border-no-left u-border-no-right u-border-no-top u-border-white u-container-style u-custom-border u-group u-shape-rectangle u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">
-            <p class="u-align-center u-custom-font u-text u-text-default u-text-1">Order Summary</p>
+            <div class="u-form u-login-control u-form-1">
+              <form th:each="Orders : ${orders}" th:if ="${Orders.tableId == tableId} and ${Orders.status == 'Ordered'}">
+                <p align="left"><b>[[${Orders.itemName}]]:&nbsp;&nbsp;$[[${Orders.total * Orders.quantity}]]</b> &nbsp;&nbsp; <b><br>Quantity: [[${Orders.quantity}]]</b>
+               </p>
+            </form>
+                <p style="color: black;font-size:22px;"><br><br><b>Total: $[[${#numbers.formatDecimal(total,1,2,'POINT')}]]</b></p>
+            </div> 
           </div>
         </div>
-        <div class="u-container-style u-group u-opacity u-opacity-65 u-shape-rectangle u-white u-group-2">
-          <div class="u-container-layout u-container-layout-2">
-            <p class="u-custom-font u-text u-text-2">Classic Hotpot Broth (39.99)<br>-Broccoli<br>-Beef<br>-Potatoes<br>-Scallions<br>-Ramen<br>KBBQ OPtion (10.00)<br>EXTRA Food Fee (10%) + Tax(6.42)<br>
-              <span style="font-weight: 700;">Total: $61.41</span>
-            </p>
-          </div>
-        </div>
-        <div class="u-container-style u-grey-80 u-group u-radius-50 u-shape-round u-group-3" data-href="http://localhost:8080/customer/withcash">
-          <div class="u-container-layout u-valign-middle u-container-layout-3">
-            <p class="u-align-center u-custom-font u-text u-text-default u-text-3">
-              <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-btn-1" href="http://localhost:8080/customer/withcash">Pay With Cash</a>
-            </p>
-          </div>
-        </div>
-        <div class="u-container-style u-grey-80 u-group u-radius-50 u-shape-round u-group-4" data-href="http://localhost:8080/customer/withcard">
-          <div class="u-container-layout u-container-layout-4">
-            <p class="u-align-center u-custom-font u-text u-text-default u-text-4">
-              <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-btn-2" href="http://localhost:8080/customer/withcard">Pay With Card</a>
-            </p>
-          </div>
-        </div>
+        <a href="http://localhost:8080/customer/withcard" class="u-border-none u-btn u-btn-round u-button-style u-grey-80 u-radius-50 u-btn-2">Pay with Cash</a>
+        <a href="http://localhost:8080/customer/withcash" class="u-border-none u-btn u-btn-round u-button-style u-grey-80 u-radius-50 u-btn-3">Pay with Card</a>
       </div>
     </section>
     
     
     
     <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/html5-template" target="_blank">
-        <span>HTML5 Template</span>
+      <a class="u-link" href="https://nicepage.com/templates" target="_blank">
+        <span>Templates</span>
       </a>
       <p class="u-text">
         <span>created with</span>
       </p>
-      <a class="u-link" href="https://nicepage.best" target="_blank">
-        <span>Best Free Website Builder</span>
+      <a class="u-link" href="" target="_blank">
+        <span>Website Builder Software</span>
       </a>. 
     </section>
   

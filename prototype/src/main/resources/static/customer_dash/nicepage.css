@@ -38107,7 +38107,7 @@ a.u-link.u-text-hover-grey-90:hover {
 .u-header .u-text-1 {
   font-family: "Bebas Neue";
   font-size: 3rem;
-  margin: 3px auto 0 118px;
+  margin: 3px auto 0 25px;
 }
 
 .u-header .u-btn-1 {
@@ -38117,38 +38117,27 @@ a.u-link.u-text-hover-grey-90:hover {
   font-size: 0.875rem;
   letter-spacing: 1px;
   background-image: none;
-  margin: -63px auto 0 0;
+  margin: -59px 25px 0 auto;
 }
 
-.u-header .u-btn-2 {
-  border-style: none;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  letter-spacing: 1px;
-  background-image: none;
-  margin: -42px 0 0 auto;
+.u-header .u-text-2 {
+  font-family: "Bebas Neue";
+  font-size: 1.5rem;
+  margin: -40px auto 0;
 }
 @media (max-width: 1199px) {
-  .u-header .u-text-1 {
-    margin-left: 118px;
-  }
-
   .u-header .u-btn-1 {
-    margin-top: -63px;
+    margin-top: -59px;
+    margin-right: 0;
   }
 
-  .u-header .u-btn-2 {
-    margin-top: -42px;
-  }
-}
-
-
-@media (max-width: 575px) {
-  .u-header .u-text-1 {
-    margin-left: 74px;
+  .u-header .u-text-2 {
+    margin-top: -40px;
   }
 }
+
+
+
  .u-footer {
   background-image: none;
 }

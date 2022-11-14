@@ -52,26 +52,6 @@ public class ManagerController {
 
     @GetMapping("/manager/home")
     public String viewManagerHomePage() {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String name = auth.getName();
-        //System.out.println(name);
-        Integer managerId = null;
-        List<Employee> list = employeeService.getAllEmployees();
-        for (Employee employee : list) {
-            if(employee.getUsername().equals(name)) {
-                managerId = employee.getId();
-            }
-        }
-        //System.out.println(managerId);
-        
-        //List<OrderItems> parsedMenu = null;
-        List<OrderItems> cartItems = orderItemsService.getAllItems();
-        //for(OrderItems employee : cartItems) {
-        //    if(employee.getManagerId().equals(managerId)) {
-        //        parsedMenu.add(employee);
-        //   }
-        //}
-        //System.out.println(cartItems);
         return "manager/managerhome";
     }
 

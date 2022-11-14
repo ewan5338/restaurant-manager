@@ -34,7 +34,9 @@
         <div class="u-container-style u-grey-80 u-group u-radius-50 u-shape-round u-group-1" data-href="http://localhost:8080/">
           <div class="u-container-layout u-valign-middle u-container-layout-1">
             <p class="u-align-center u-custom-font u-text u-text-default u-text-2">
-              <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-btn-1" href="http://localhost:8080/">Return Home</a>
+              <form th:action="@{/customer/logout}" method="post">
+                    <input type="submit" value="Return Home" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-btn-1"/>
+                </form>
             </p>
           </div>
         </div>
