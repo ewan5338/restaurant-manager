@@ -65,7 +65,7 @@
                         <td th:text="${Item.itemName}" class="u-border-2 u-border-black u-table-cell"></td>
                         <td th:text="${Item.itemQuantity}" class="u-border-2 u-border-black u-table-cell"></td>
                         <td><a th:href="@{/updateItem/{id}(id=${Item.id})}"
-                               class="btn btn-primary">Update</a>
+                               class="btn btn-dark">Update</a>
                             <a th:href="@{/deleteItem/{id}(id=${Item.id})}"
                                class="btn btn-danger">Delete</a>
                         </td>
