@@ -12,6 +12,8 @@ import com.wantensoup.prototype.Menu.MenuService;
 import com.wantensoup.prototype.OrderFromMenu.OrderMenu;
 import com.wantensoup.prototype.OrderFromMenu.OrderMenuService;
 import com.wantensoup.prototype.OrderItems.OrderItems;
+import com.wantensoup.prototype.Table.RestTables;
+import com.wantensoup.prototype.Table.TableService;
 import com.wantensoup.prototype.User.User;
 import com.wantensoup.prototype.User.UserService;
 import java.util.List;
@@ -37,6 +39,9 @@ public class CustomerController {
     
     @Autowired
     private OrderMenuService orderMenuService;
+    
+    @Autowired
+    private TableService tableService;
     
     @GetMapping("/customer/home")
     public String viewCustomerDashboard() {
@@ -113,7 +118,13 @@ public class CustomerController {
     
     @GetMapping("/deleteOrderFromMenu/{id}")
     public String deleteOrderFromMenu(@PathVariable(value = "id") Integer _id) {
-        this.orderMenuService.deleteItemById(_id);
+        List<OrderMenu> tableOrders = orderMenuService.getAllItems();
+        for (OrderMenu items : tableOrders) {
+            if(items.getStatus().equals("Paid") && items.getTableId().equals(_id)) {
+                orderMenuService.deleteItemById(_id);
+            }
+        }
+
         return "redirect:/customer/placeorder";
     }
     
@@ -135,7 +146,18 @@ public class CustomerController {
     }
 
     @GetMapping("/customer/callservice")
-    public String callService() {
+    public String callService(@AuthenticationPrincipal Authentication auth) {
+       auth = SecurityContextHolder.getContext().getAuthentication();
+       String tableName = auth.getName();
+       
+       List<RestTables> list = tableService.getAllTables();
+        
+        for (RestTables table : list) {
+            if (table.getTableName().equals(tableName)) {
+                table.setCalls("Needs help");
+                tableService.saveTable(table);
+            }
+        }
         return "customer/call_service";
     }
     

@@ -7,6 +7,7 @@ package com.wantensoup.prototype.Employee;
  * @author Atsoupe Bessou Kpeglo
  */
 import com.wantensoup.prototype.Menu.MenuService;
+import com.wantensoup.prototype.OrderFromMenu.OrderMenuService;
 import com.wantensoup.prototype.Schedule.ScheduleService;
 import com.wantensoup.prototype.ScheduleDate.ScheduleDateService;
 import com.wantensoup.prototype.Table.RestTables;
@@ -40,6 +41,9 @@ public class EmployeeController {
     
     @Autowired
     private ScheduleDateService scheduleDateService;
+    
+    @Autowired
+    private OrderMenuService orderMenuService;
 
     @GetMapping("/employee/home")
     public String viewEmployeeHomePage() {
@@ -73,17 +77,9 @@ public class EmployeeController {
      @GetMapping("/tableCalls/{id}")
     public String showTableCalls(@PathVariable(value = "id") Integer id, Model model) {
         //get employee from the service
-        RestTables table = tableService.getTableById(id);
-        model.addAttribute("table", table);
-        return "employee/restTable_update";
+        model.addAttribute("table", orderMenuService.getAllItems());
+        return "customer orders html here";
     }
-
-   // @PostMapping("/saveTable")
-    //public String saveCalls(@ModelAttribute("calls") RestTables _calls) {
-       // tableService.saveTable(_calls);
-       // return "redirect:/employee/manage_tables";
-    //}
-    
     
     @GetMapping("/employee/info")
     public String viewEmployeeInfo(Model _model, Model _model2, @AuthenticationPrincipal Authentication auth) {
@@ -127,5 +123,7 @@ public class EmployeeController {
         _model3.addAttribute("scheduleWeek", scheduleDateService.getScheduleDateById(1));
         return "employee/employee_sched";
     }
+    
+    
 
 }
