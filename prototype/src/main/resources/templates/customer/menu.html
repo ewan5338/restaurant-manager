@@ -5,10 +5,10 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>Menu</title>
-    <link rel="stylesheet" href="/viewMenuManager/nicepage.css" media="screen">
-<link rel="stylesheet" href="/viewMenuManager/Page-1.css" media="screen">
-    <script class="u-script" type="text/javascript" src="/viewMenuManager/jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="/viewMenuManager/nicepage.js" defer=""></script>
+    <link rel="stylesheet" href="/customerMenu/nicepage.css" media="screen">
+<link rel="stylesheet" href="/customerMenu/Page-1.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/customerMenu/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/customerMenu/nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.21.12, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue:400">
@@ -25,17 +25,14 @@
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-grey-80 u-header u-header" id="sec-848c"><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-custom-font u-text u-text-default u-text-1">Wan-ten soup</p>
-        <form th:action="@{/manager/logout}" method="post">
-        <input type="submit" value="Logout" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-1"/>
-        </form>
-        <a href="http://localhost:8080/customer/menu" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-2">Menu</a>
-        <a href="http://localhost:8080/customer/home" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-3">Home</a>
+        <a href="http://localhost:8080/customer/menu" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-1">Menu</a>
+        <a href="http://localhost:8080/customer/home" class="u-border-none u-btn u-btn-round u-button-style u-radius-50 u-white u-btn-2">Home</a>
       </div></header>
     <section class="u-clearfix u-gradient u-section-1" id="sec-7da0">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-align-center u-container-style u-grey-80 u-group u-shape-rectangle u-group-1">
           <div class="u-container-layout u-container-layout-1">
-            <p class="u-align-center u-custom-font u-text u-text-default u-text-1">Meals</p>
+            <p class="u-align-center u-custom-font u-text u-text-default u-text-1">Meals </p>
           </div>
         </div>
         <div class="u-table u-table-responsive u-table-1">
@@ -52,10 +49,10 @@
             </thead>
             <tbody class="u-align-center u-table-body u-white u-table-body-1">
               <tr style="height: 0px;">
-               <tr th:each="Menu : ${listMenuItems}" th:if ="${Menu.itemType == 'Custom'}">
-                        <td th:text="${Menu.menuItem}" class="u-border-1 u-border-black u-table-cell"></td>
-                        <td th:text="${Menu.price}" class="u-border-1 u-border-black u-table-cell"></td>
-               </tr>
+                <tr th:each="Menu : ${listMenuItems}" th:if ="${Menu.itemType == 'Custom'}">
+                         <td th:text="${Menu.menuItem}" class="u-border-1 u-border-black u-table-cell"></td>
+                         <td th:text="${Menu.price}" class="u-border-1 u-border-black u-table-cell"></td>
+                </tr>
             </tbody>
           </table>
         </div>
@@ -73,10 +70,10 @@
             </thead>
             <tbody class="u-align-center u-table-body u-white u-table-body-2">
               <tr style="height: 0px;">
-               <tr th:each="Menu : ${listMenuItems}" th:if ="${Menu.itemType == 'Dessert'}">
-                        <td th:text="${Menu.menuItem}" class="u-border-1 u-border-black u-table-cell"></td>
-                        <td th:text="${Menu.price}" class="u-border-1 u-border-black u-table-cell"></td>
-               </tr>
+                <tr th:each="Menu : ${listMenuItems}" th:if ="${Menu.itemType == 'Dessert'}">
+                         <td th:text="${Menu.menuItem}" class="u-border-1 u-border-black u-table-cell"></td>
+                         <td th:text="${Menu.price}" class="u-border-1 u-border-black u-table-cell"></td>
+                </tr>
             </tbody>
           </table>
         </div>
@@ -94,10 +91,10 @@
             </thead>
             <tbody class="u-align-center u-table-body u-white u-table-body-3">
               <tr style="height: 0px;">
-               <tr th:each="Menu : ${listMenuItems}" th:if ="${Menu.itemType == 'Meal'}">
-                        <td th:text="${Menu.menuItem}" class="u-border-1 u-border-black u-table-cell"></td>
-                        <td th:text="${Menu.price}" class="u-border-1 u-border-black u-table-cell"></td>
-               </tr>
+                <tr th:each="Menu : ${listMenuItems}" th:if ="${Menu.itemType == 'Meal'}">
+                         <td th:text="${Menu.menuItem}" class="u-border-1 u-border-black u-table-cell"></td>
+                         <td th:text="${Menu.price}" class="u-border-1 u-border-black u-table-cell"></td>
+                </tr>
             </tbody>
           </table>
         </div>
@@ -130,10 +127,10 @@
             </thead>
             <tbody class="u-align-center u-table-body u-white u-table-body-4">
               <tr style="height: 0px;">
-               <tr th:each="Menu : ${listMenuItems}" th:if ="${Menu.itemType == 'Drink'}">
-                        <td th:text="${Menu.menuItem}" class="u-border-1 u-border-black u-table-cell"></td>
-                        <td th:text="${Menu.price}" class="u-border-1 u-border-black u-table-cell"></td>
-               </tr>
+                <tr th:each="Menu : ${listMenuItems}" th:if ="${Menu.itemType == 'Drink'}">
+                         <td th:text="${Menu.menuItem}" class="u-border-1 u-border-black u-table-cell"></td>
+                         <td th:text="${Menu.price}" class="u-border-1 u-border-black u-table-cell"></td>
+                </tr>
             </tbody>
           </table>
         </div>

@@ -1,0 +1,93 @@
+ .u-section-1 {
+  background-image: linear-gradient(#de3038, #f1c50e);
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 100vh;
+}
+
+.u-section-1 .u-shape-1 {
+  width: 250px;
+  height: 188px;
+  margin: 170px auto 0;
+}
+
+.u-section-1 .u-shape-2 {
+  width: 379px;
+  height: 379px;
+  margin: -292px auto 0;
+}
+
+.u-section-1 .u-text-1 {
+  font-family: "Bebas Neue";
+  margin: 24px 28px 0;
+}
+
+.u-section-1 .u-group-1 {
+  width: 397px;
+  min-height: 68px;
+  height: auto;
+  margin: 25px auto 60px;
+}
+
+.u-section-1 .u-container-layout-1 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.u-section-1 .u-text-2 {
+  font-family: "Bebas Neue";
+  font-size: 3.75rem;
+  margin: 0 auto;
+}
+
+.u-section-1 .u-btn-1 {
+  background-image: none;
+  padding: 0;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-text-1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-group-1 {
+    height: auto;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-top: -129px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-right: 162px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-shape-2 {
+    width: 340px;
+    height: 340px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-group-1 {
+    width: 340px;
+    margin-top: -66px;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-top: -103px;
+    margin-right: 102px;
+    font-size: 3rem;
+  }
+}
