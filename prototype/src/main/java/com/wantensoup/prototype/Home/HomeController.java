@@ -1,7 +1,7 @@
 package com.wantensoup.prototype.Home;
 
 /**
- * Last Updated: 11/01/2022
+ * Last Updated: 11/14/2022
  * Class Purpose: Contains all the mappings to display the home page and the 
  * pages you can go to from the home page.
  * @author Kristin Cattell
@@ -23,13 +23,8 @@ public class HomeController extends GetDateAPI {
 
     @GetMapping("")
     public String viewHomePage(Model _model) throws URISyntaxException, IOException, InterruptedException {
-        //_model.addAttribute("dateAPI", parseAPI());
+        _model.addAttribute("dateAPI", parseAPI());
         return "index/index";
-    }
-
-    @GetMapping("/tableselect")
-    public String viewCustomerHomePage() {
-        return "customer/table_select";
     }
 
     @GetMapping("/manager/login")
@@ -45,11 +40,6 @@ public class HomeController extends GetDateAPI {
     @GetMapping("/customer/login")
     public String viewTableLoginPage() {
         return "customer/tablelogin";
-    }
-
-    @GetMapping("/forgotpass")
-    public String forgotPass() {
-        return "index/forgotpass";
     }
     
     @GetMapping("/menu")

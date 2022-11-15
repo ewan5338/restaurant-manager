@@ -1,7 +1,7 @@
 package com.wantensoup.prototype.GetDateAPI;
 
 /**
- * Last Updated: 11/01/2022
+ * Last Updated: 11/14/2022
  * Class Purpose: Calls an API that will then parse out and format the current 
  * date and time.
  * @author Kristin Cattell
@@ -24,7 +24,7 @@ public class GetDateAPI extends FormatDate {
         //Creates a new Http Request to the API.
         HttpRequest getRequest = HttpRequest.newBuilder()
                 .uri(new URI("https://world-clock.p.rapidapi.com/json/est/now"))
-                .headers("X-RapidAPI-Key", "411..............................",
+                .headers("X-RapidAPI-Key", "4113e34ee0msh81c36da3c7bb166p1f439ejsn1e4374254c55",
                         "X-RapidAPI-Host", "world-clock.p.rapidapi.com")
                 .build();
         
