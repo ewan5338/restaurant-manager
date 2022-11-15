@@ -1,8 +1,8 @@
 package com.wantensoup.prototype.Menu;
 
 /**
- * Last Updated: 11/01/2022
- * Class Purpose: Implements the functionality of item objects.
+ * Last Updated: 11/14/2022
+ * Class Purpose: Implements the functionality of menu objects.
  * @author Kristin Cattell
  */
 import java.util.List;
@@ -31,7 +31,7 @@ public class MenuServiceImpl implements MenuService {
         Optional<Menu> optional = menuRepository.findById(_id);
         Menu item = null;
 
-        //Checks to see if an item is present within the "items" table.
+        //Checks to see if a menu item is present within the "menu_items" table.
         if (optional.isPresent()) {
             item = optional.get();
         } else {

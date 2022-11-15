@@ -1,9 +1,8 @@
 package com.wantensoup.prototype.Employee;
 
 /**
- * Last Updated: 11/09/2022 Class Purpose: Contains all the mappings to display
- * all employee HTML pages.
- *
+ * Last Updated: 11/14/2022 
+ * Class Purpose: Contains all the mappings to display all employee HTML pages.
  * @author Atsoupe Bessou Kpeglo
  */
 import com.wantensoup.prototype.Menu.MenuService;
@@ -58,9 +57,9 @@ public class EmployeeController {
     }
 
     @GetMapping("/tableStatusUpdate/{id}")
-    public String showFormForUpdate(@PathVariable(value = "id") Integer id, Model model) {
+    public String showFormForUpdate(@PathVariable(value = "id") Integer id, Model _model) {
         RestTables table = tableService.getTableById(id);
-        model.addAttribute("table", table);
+        _model.addAttribute("table", table);
         return "employee/restTable_update";
     }
 
@@ -116,9 +115,9 @@ public class EmployeeController {
     }
     
     @GetMapping("/employee/info")
-    public String viewEmployeeInfo(Model _model, Model _model2, @AuthenticationPrincipal Authentication auth) {
-        auth = SecurityContextHolder.getContext().getAuthentication();
-        String name = auth.getName();
+    public String viewEmployeeInfo(Model _model, Model _model2, @AuthenticationPrincipal Authentication _auth) {
+        _auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = _auth.getName();
         Integer employeeId = null;
         List<Employee> list = employeeService.getAllEmployees();
         
@@ -140,9 +139,9 @@ public class EmployeeController {
     }
 
     @GetMapping("/employee/schedule")
-    public String viewSchedule(Model _model, Model _model2, Model _model3, @AuthenticationPrincipal Authentication auth) {
-        auth = SecurityContextHolder.getContext().getAuthentication();
-        String name = auth.getName();
+    public String viewSchedule(Model _model, Model _model2, Model _model3, @AuthenticationPrincipal Authentication _auth) {
+        _auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = _auth.getName();
         Integer employeeId = null;
         List<Employee> list = employeeService.getAllEmployees();
         

@@ -1,8 +1,8 @@
 package com.wantensoup.prototype.OrderItems;
 
 /**
- * Last Updated: 11/01/2022
- * Class Purpose: Implements the functionality of item objects.
+ * Last Updated: 11/14/2022
+ * Class Purpose: Implements the functionality of OrderItems objects.
  * @author Kristin Cattell
  */
 import java.util.List;
@@ -31,7 +31,7 @@ public class OrderItemsServiceImpl implements OrderItemsService {
         Optional<OrderItems> optional = itemRepository.findById(_id);
         OrderItems item = null;
 
-        //Checks to see if an item is present within the "items" table.
+        //Checks to see if an item is present within the "items_cart" table.
         if (optional.isPresent()) {
             item = optional.get();
         } else {

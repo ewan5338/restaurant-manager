@@ -1,5 +1,10 @@
 package com.wantensoup.prototype.OrderItems;
 
+/**
+ * Last Updated: 11/13/2022
+ * Class Purpose: Contains all the mappings to display all OrderItems HTML pages.
+ * @author Kristin Cattell
+ */
 import com.wantensoup.prototype.Employee.Employee;
 import com.wantensoup.prototype.Employee.EmployeeService;
 import com.wantensoup.prototype.Item.Item;
@@ -16,10 +21,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-/**
- *
- * @author garca
- */
 @Controller
 public class OrderItemsController {
     
@@ -33,34 +34,37 @@ public class OrderItemsController {
     private ItemService itemService;
     
     @GetMapping("/manager/order")
-    public String showOrders(Model _model, @AuthenticationPrincipal Authentication auth) {
-        auth = SecurityContextHolder.getContext().getAuthentication();
-        String name = auth.getName();
+    public String showOrders(Model _model, @AuthenticationPrincipal Authentication _auth) {
+        //Get the username of the current logged in manager.
+        _auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = _auth.getName();
         Integer managerId = null;
         List<Employee> list = employeeService.getAllEmployees();
         
+        //Find manager's ID.
         for (Employee employee : list) {
             if(employee.getUsername().equals(name)) {
                 managerId = employee.getId();
             }
         }
         
-        List<OrderItems> cartItems = orderItemsService.getAllItems();
         _model.addAttribute("listItems", itemService.getAllItems());
-        _model.addAttribute("cartItems", cartItems);
+        _model.addAttribute("cartItems", orderItemsService.getAllItems());
         _model.addAttribute("managerId", managerId);
         return "orderItems/order";
     }
     
     @GetMapping("/addNewOrder/{name}")
-    public String addNewOrder(@PathVariable(value = "name") Integer name, Model _model, @AuthenticationPrincipal Authentication auth) {
-       auth = SecurityContextHolder.getContext().getAuthentication();
-       String managerName = auth.getName();
+    public String addNewOrder(@PathVariable(value = "name") Integer name, Model _model, @AuthenticationPrincipal Authentication _auth) {
+       //Get the username of the current logged in manager.
+       _auth = SecurityContextHolder.getContext().getAuthentication();
+       String managerName = _auth.getName();
        Integer managerId = null;
        String itemName = null;
        List<Employee> list = employeeService.getAllEmployees();
        List<Item> itemList = itemService.getAllItems();
         
+       //Find manager's Id and name.
         for (Employee employee : list) {
             if(employee.getUsername().equals(managerName)) {
                 managerId = employee.getId();
@@ -68,12 +72,14 @@ public class OrderItemsController {
             }
         }
         
+        //Find order item associated with that manager.
         for(Item item : itemList) {
             if(item.getId().equals(name)) {
                 itemName = item.getItemName();
             }
         }
         
+        //Save that new ordered item.
         OrderItems itemOrder = new OrderItems();
         itemOrder.setManagerId(managerId);
         itemOrder.setManagerName(managerName);

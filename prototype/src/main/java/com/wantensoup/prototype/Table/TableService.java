@@ -1,15 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.wantensoup.prototype.Table;
 
-import java.util.List;
-
 /**
- *
+ * Last Updated: 11/01/2022 
+ * Class Purpose: Defines the functionality of RestTables objects.
  * @author Atsoupe Bessou Kpeglo
  */
+import java.util.List;
 
 public interface TableService {
     

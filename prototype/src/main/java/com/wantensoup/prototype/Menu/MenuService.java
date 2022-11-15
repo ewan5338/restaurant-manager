@@ -1,8 +1,8 @@
 package com.wantensoup.prototype.Menu;
 
 /**
- * Last Updated: 10/18/2022 
- * Class Purpose: Defines the functionality of item objects.
+ * Last Updated: 11/14/2022 
+ * Class Purpose: Defines the functionality of menu objects.
  * @author Kristin Cattell
  */
 import java.util.List;

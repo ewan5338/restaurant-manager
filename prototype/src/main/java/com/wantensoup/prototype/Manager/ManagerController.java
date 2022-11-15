@@ -1,7 +1,7 @@
 package com.wantensoup.prototype.Manager;
 
 /**
- * Last Updated: 11/11/2022
+ * Last Updated: 11/14/2022
  * Class Purpose: Contains all the mappings to display all manager HTML pages.
  * @author Kristin Cattell
  */
@@ -71,10 +71,14 @@ public class ManagerController {
     @PostMapping("/saveEmployee")
     public String saveNewEmployee(@ModelAttribute("employee") Employee _employee) {
         employeeService.saveEmployee(_employee);
+        
+        //Saving a new schedule entity from employee information
         Schedule schedule = new Schedule();
         schedule.setId(_employee.getId());
         schedule.setEmployeeName(_employee.getFullName());
         scheduleService.saveSchedule(schedule);
+        
+        //Saving a new user entity from employee information
         User user = new User();
         user.setId(_employee.getId());
         user.setUsername(_employee.getUsername());
@@ -133,18 +137,20 @@ public class ManagerController {
     }
 
     @GetMapping("/manager/orderconfirm")
-    public String orderConfirmed(@AuthenticationPrincipal Authentication auth) {
-        auth = SecurityContextHolder.getContext().getAuthentication();
-        String managerName = auth.getName();
+    public String orderConfirmed(@AuthenticationPrincipal Authentication _auth) {
+        _auth = SecurityContextHolder.getContext().getAuthentication();
+        String managerName = _auth.getName();
         List<OrderItems> cartItems = orderItemsService.getAllItems();
         List<Employee> list = employeeService.getAllEmployees();
         
+        //Find manager's name that's trying to order items.
         for (Employee employee : list) {
             if(employee.getUsername().equals(managerName)) {
                 managerName = employee.getFullName();
             }
         }
         
+        //Set ordered item's status to "ordered" after "Place Order" button is pressed.
         for (OrderItems items : cartItems) {
             if(items.getStatus().equals("Ordering") && items.getManagerName().equals(managerName)) {
                 items.setStatus("Ordered");
@@ -191,11 +197,6 @@ public class ManagerController {
     public String deleteMenuItem(@PathVariable(value = "id") Integer _id) {
         this.menuService.deleteMenuItemById(_id);
         return "redirect:/manager/managemenu";
-    }
-
-    @GetMapping("/manager/editbox")
-    public String editBox() {
-        return "manager/edit_box";
     }
 
 }

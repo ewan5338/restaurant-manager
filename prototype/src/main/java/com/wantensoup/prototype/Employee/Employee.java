@@ -1,7 +1,7 @@
 package com.wantensoup.prototype.Employee;
 
 /**
- * Last Updated: 11/01/2022
+ * Last Updated: 11/13/2022
  * Class Purpose: Creates the table "Employees" and what attributes the table 
  * holds.
  * @author Atsoupe Bessou Kpeglo

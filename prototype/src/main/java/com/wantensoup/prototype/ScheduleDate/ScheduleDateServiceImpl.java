@@ -2,7 +2,7 @@ package com.wantensoup.prototype.ScheduleDate;
 
 /**
  * Last Updated: 11/10/2022
- * Class Purpose: Implements the functionality of schedule objects.
+ * Class Purpose: Implements the functionality of ScheduleDate objects.
  * @author Kristin Cattell
  */
 import java.util.List;

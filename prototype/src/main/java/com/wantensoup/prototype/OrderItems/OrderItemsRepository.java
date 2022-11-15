@@ -1,8 +1,8 @@
 package com.wantensoup.prototype.OrderItems;
 
 /**
- * Last Updated: 10/31/2022 
- * Class Purpose: Allows access to the data in the "items" table in the database.
+ * Last Updated: 11/13/2022 
+ * Class Purpose: Allows access to the data in the "items_cart" table in the database.
  * @author Kristin Cattell
  */
 import java.util.List;

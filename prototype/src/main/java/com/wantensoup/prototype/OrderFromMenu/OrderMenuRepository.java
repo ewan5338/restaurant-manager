@@ -1,9 +1,9 @@
 package com.wantensoup.prototype.OrderFromMenu;
 
 /**
- * Last Updated: 10/31/2022 
- * Class Purpose: Allows access to the data in the "items" table in the database.
- * @author Kristin Cattell
+ * Last Updated: 11/13/2022 
+ * Class Purpose: Allows access to the data in the "table_carts" table in the database.
+ * @author Ewan Allen, Kristin Cattell
  */
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

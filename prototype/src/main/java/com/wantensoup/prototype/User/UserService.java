@@ -2,7 +2,7 @@ package com.wantensoup.prototype.User;
 
 /**
  * Last Updated: 11/10/2022
- * Class Purpose: Defines the functionality of schedule objects.
+ * Class Purpose: Defines the functionality of user objects.
  * @author Kristin Cattell
  */
 import java.util.List;

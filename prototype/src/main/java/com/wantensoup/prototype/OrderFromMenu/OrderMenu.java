@@ -2,8 +2,8 @@ package com.wantensoup.prototype.OrderFromMenu;
 
 /**
  * Last Updated: 11/13/2022
- * Class Purpose: Creates the table "items_cart" and what attributes the table holds.
- * @author Kristin Cattell
+ * Class Purpose: Creates the table "table_carts" and what attributes the table holds.
+ * @author Ewan Allen, Kristin Cattell
  */
 import javax.persistence.Column;
 import javax.persistence.Entity;

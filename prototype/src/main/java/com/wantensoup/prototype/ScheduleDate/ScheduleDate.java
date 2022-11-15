@@ -2,7 +2,7 @@ package com.wantensoup.prototype.ScheduleDate;
 
 /**
  * Last Updated: 11/10/2022
- * Class Purpose: Creates the table "schedules" and what attributes the table holds.
+ * Class Purpose: Creates the table "schedules_date" and what attributes the table holds.
  * @author Kristin Cattell
  */
 import javax.persistence.Column;

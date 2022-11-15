@@ -1,18 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.wantensoup.prototype.Table;
 
+/**
+ * Last Updated: 11/01/2022
+ * Class Purpose: Implements the functionality of RestTable objects.
+ * @author Atsoupe Bessou Kpeglo
+ */
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author Atsoupe Bessou kpeglo
- */
 @Service
 public class TableServiceImpl implements TableService{
     
@@ -28,10 +25,6 @@ public class TableServiceImpl implements TableService{
     public void saveTable(RestTables table) {
         this.tableRepository.save(table);
     }
-
-    //public void saveCalls(RestTables calls) {
-        //this.tableRepository.save(calls);
-    //}
     
     @Override
     public RestTables getTableById(Integer number) {

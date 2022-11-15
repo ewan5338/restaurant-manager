@@ -4,7 +4,6 @@ package com.wantensoup.prototype.Customer;
  * Last Updated: 11/14/2022 
  * Class Purpose: Contains all the mappings to display all customer HTML pages. 
  * Also contains methods to utilize security and menu ordering functions.
- *
  * @author Ewan Allen
  */
 import com.wantensoup.prototype.Menu.Menu;
@@ -145,9 +144,9 @@ public class CustomerController {
     }
     
     @GetMapping("/customer/callservice")
-    public String callService(@AuthenticationPrincipal Authentication auth) {
-       auth = SecurityContextHolder.getContext().getAuthentication();
-       String tableName = auth.getName();
+    public String callService(@AuthenticationPrincipal Authentication _auth) {
+       _auth = SecurityContextHolder.getContext().getAuthentication();
+       String tableName = _auth.getName();
        
        List<RestTables> list = tableService.getAllTables();
         
@@ -162,9 +161,9 @@ public class CustomerController {
     }
     
     @GetMapping("/customer/payorder")
-    public String viewPayOrder(Model _model, Model _model2, Model _model3, @AuthenticationPrincipal Authentication auth) {
-        auth = SecurityContextHolder.getContext().getAuthentication();
-        String tableName = auth.getName();
+    public String viewPayOrder(Model _model, Model _model2, Model _model3, @AuthenticationPrincipal Authentication _auth) {
+        _auth = SecurityContextHolder.getContext().getAuthentication();
+        String tableName = _auth.getName();
         Integer tableId = null;
         float total = 0;
         List<User> list = userService.getAllUsers();

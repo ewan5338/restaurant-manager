@@ -1,9 +1,9 @@
 package com.wantensoup.prototype.OrderFromMenu;
 
 /**
- * Last Updated: 10/18/2022 
- * Class Purpose: Defines the functionality of item objects.
- * @author Kristin Cattell
+ * Last Updated: 11/13/2022 
+ * Class Purpose: Defines the functionality of OrderMenu objects.
+ * @author Ewan Allen, Kristin Cattell
  */
 import java.util.List;
 

@@ -1,9 +1,9 @@
 package com.wantensoup.prototype.OrderFromMenu;
 
 /**
- * Last Updated: 11/01/2022
- * Class Purpose: Implements the functionality of item objects.
- * @author Kristin Cattell
+ * Last Updated: 11/14/2022
+ * Class Purpose: Implements the functionality of OrderMenu objects.
+ * @author Ewan Allen, Kristin Cattell
  */
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +31,7 @@ public class OrderMenuServiceImpl implements OrderMenuService {
         Optional<OrderMenu> optional = itemRepository.findById(_id);
         OrderMenu item = null;
 
-        //Checks to see if an item is present within the "items" table.
+        //Checks to see if an item is present within the "table_carts" table.
         if (optional.isPresent()) {
             item = optional.get();
         } else {

@@ -2,7 +2,7 @@ package com.wantensoup.prototype.ScheduleDate;
 
 /**
  * Last Updated: 11/10/2022
- * Class Purpose: Allows access to the data in the "Schedules" table in the 
+ * Class Purpose: Allows access to the data in the "schedules_date" table in the 
  * database.
  * @author Kristin Cattell
  */
