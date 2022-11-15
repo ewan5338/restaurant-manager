@@ -23,9 +23,7 @@ public class GetDateAPI extends FormatDate {
 
         //Creates a new Http Request to the API.
         HttpRequest getRequest = HttpRequest.newBuilder()
-                .uri(new URI("https://world-clock.p.rapidapi.com/json/est/now"))
-                .headers("X-RapidAPI-Key", "4113e34ee0msh81c36da3c7bb166p1f439ejsn1e4374254c55",
-                        "X-RapidAPI-Host", "world-clock.p.rapidapi.com")
+                .uri(new URI("http://worldtimeapi.org/api/timezone/America/New_York"))
                 .build();
         
         //Sends the http request.
@@ -36,7 +34,7 @@ public class GetDateAPI extends FormatDate {
 
         //Converts the response body from Json to String and parse out the current date and time into String date.
         time = gson.fromJson(getResponse.body(), Time.class);
-        date = time.getCurrentDateTime();
+        date = time.getDatetime();
 
         //Creates a substring that can be parsed by LocalDateTime.
         dateSubstring = createSubstring(date);

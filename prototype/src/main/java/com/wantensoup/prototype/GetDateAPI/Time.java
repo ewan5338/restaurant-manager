@@ -8,16 +8,17 @@ package com.wantensoup.prototype.GetDateAPI;
  */
 public class Time {
 
-    private String currentDateTime;
+    private String datetime;
     
     //=================  GETTERS ===============
-    public String getCurrentDateTime() {
-        return currentDateTime;
+    public String getDatetime() {
+        return datetime;
     }
     
+    
     //=================  SETTERS ===============
-    public void setCurrentDateTime(String _currentDateTime) {
-        this.currentDateTime = _currentDateTime;
+    public void setDatetime(String datetime) {
+        this.datetime = datetime;
     }
-
+    
 }
