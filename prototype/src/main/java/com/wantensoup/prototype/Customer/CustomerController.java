@@ -1,19 +1,16 @@
 package com.wantensoup.prototype.Customer;
 
 /**
- * Last Updated: 11/14/2022 Class Purpose: Contains all the mappings to display
- * all customer HTML pages, Also contains methods to utilize security and menu
- * ordering functions.
+ * Last Updated: 11/14/2022 
+ * Class Purpose: Contains all the mappings to display all customer HTML pages. 
+ * Also contains methods to utilize security and menu ordering functions.
  *
  * @author Ewan Allen
  */
-import com.wantensoup.prototype.Employee.Employee;
-import com.wantensoup.prototype.Item.Item;
 import com.wantensoup.prototype.Menu.Menu;
 import com.wantensoup.prototype.Menu.MenuService;
 import com.wantensoup.prototype.OrderFromMenu.OrderMenu;
 import com.wantensoup.prototype.OrderFromMenu.OrderMenuService;
-import com.wantensoup.prototype.OrderItems.OrderItems;
 import com.wantensoup.prototype.Table.RestTables;
 import com.wantensoup.prototype.Table.TableService;
 import com.wantensoup.prototype.User.User;
@@ -51,9 +48,9 @@ public class CustomerController {
     }
     
     @GetMapping("/customer/placeorder")
-    public String showOrders(Model _model, @AuthenticationPrincipal Authentication auth) {
-        auth = SecurityContextHolder.getContext().getAuthentication();
-        String name = auth.getName();
+    public String showOrders(Model _model, @AuthenticationPrincipal Authentication _auth) {
+        _auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = _auth.getName();
         Integer tableId = null;
         List<User> list = userService.getAllUsers();
         
@@ -63,17 +60,16 @@ public class CustomerController {
             }
         }
         
-        List<OrderMenu> cartItems = orderMenuService.getAllItems();
         _model.addAttribute("listItems", menuService.getAllMenuItems());
-        _model.addAttribute("cartItems", cartItems);
+        _model.addAttribute("cartItems", orderMenuService.getAllItems());
         _model.addAttribute("tableId", tableId);
         return "customer/place_order";
     }
     
     @GetMapping("/addNewOrderFromMenu/{name}")
-    public String addNewOrderFromMenu(@PathVariable(value = "name") Integer name, Model _model, @AuthenticationPrincipal Authentication auth) {
-        auth = SecurityContextHolder.getContext().getAuthentication();
-        String tableName = auth.getName();
+    public String addNewOrderFromMenu(@PathVariable(value = "name") Integer name, Model _model, @AuthenticationPrincipal Authentication _auth) {
+        _auth = SecurityContextHolder.getContext().getAuthentication();
+        String tableName = _auth.getName();
         Integer tableId = null;
         String menuName = null;
         double menuPrice = 0;
@@ -125,16 +121,23 @@ public class CustomerController {
     }
     
     @GetMapping("/customer/orderconfirm")
-    public String confirmMenuOrder(@AuthenticationPrincipal Authentication auth) {
-        auth = SecurityContextHolder.getContext().getAuthentication();
-        String tableName = auth.getName();
+    public String confirmMenuOrder(@AuthenticationPrincipal Authentication _auth) {
+        _auth = SecurityContextHolder.getContext().getAuthentication();
+        String tableName = _auth.getName();
         List<OrderMenu> cartItems = orderMenuService.getAllItems();
-        List<User> list = userService.getAllUsers();
+        List<RestTables> allTables = tableService.getAllTables();
         
         for (OrderMenu items : cartItems) {
             if (items.getStatus().equals("Ordering") && items.getTableName().equals(tableName)) {
                 items.setStatus("Ordered");
                 orderMenuService.saveItem(items);
+            }
+        }
+        
+        for (RestTables table : allTables) {
+            if (table.getTableName().equals(tableName)) {
+                table.setTableStatus("Ordered");
+                tableService.saveTable(table);
             }
         }
         
@@ -186,12 +189,34 @@ public class CustomerController {
     }
     
     @GetMapping("/customer/withcash")
-    public String payWithCash() {
+    public String payWithCash(@AuthenticationPrincipal Authentication _auth) {
+        _auth = SecurityContextHolder.getContext().getAuthentication();
+        String tableName = _auth.getName();
+        List<RestTables> allTables = tableService.getAllTables();
+        
+        for (RestTables table : allTables) {
+            if (table.getTableName().equals(tableName)) {
+                table.setTableStatus("Attempting to pay with cash");
+                tableService.saveTable(table);
+            }
+        }
+        
         return "customer/withcash";
     }
     
     @GetMapping("/customer/withcard")
-    public String payWithCard() {
+    public String payWithCard(@AuthenticationPrincipal Authentication _auth) {
+        _auth = SecurityContextHolder.getContext().getAuthentication();
+        String tableName = _auth.getName();
+        List<RestTables> allTables = tableService.getAllTables();
+        
+        for (RestTables table : allTables) {
+            if (table.getTableName().equals(tableName)) {
+                table.setTableStatus("Paid");
+                tableService.saveTable(table);
+            }
+        }
+        
         return "customer/withcard";
     }
     
