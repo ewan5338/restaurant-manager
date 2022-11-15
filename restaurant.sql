@@ -83,21 +83,21 @@ CREATE TABLE users (
 );
 
 INSERT INTO users (id, password, role, username) VALUES
-    ('501', 'borby', 'MANAGER', 'ricky'),
-    ('502', 'bravo123', 'EMPLOYEE', 'johnny_bravo'),
-    ('503', 'black123', 'EMPLOYEE', 'rebecca_black'),
-    ('504', 'neff123', 'MANAGER', 'will_neff'),
-    ('505', 'table1', 'TABLE', 'Table 1'),
-    ('506', 'table2', 'TABLE', 'Table 2'),
-    ('507', 'table3', 'TABLE', 'Table 3'),
-    ('508', 'table4', 'TABLE', 'Table 4'),
-    ('509', 'table5', 'TABLE', 'Table 5'),
-    ('510', 'table6', 'TABLE', 'Table 6');
+    ('901', 'borby', 'MANAGER', 'ricky'),
+    ('902', 'bravo123', 'EMPLOYEE', 'johnny_bravo'),
+    ('903', 'black123', 'EMPLOYEE', 'rebecca_black'),
+    ('904', 'neff123', 'MANAGER', 'will_neff'),
+    ('200', 'table1', 'TABLE', 'Table 1'),
+    ('201', 'table2', 'TABLE', 'Table 2'),
+    ('202', 'table3', 'TABLE', 'Table 3'),
+    ('203', 'table4', 'TABLE', 'Table 4'),
+    ('204', 'table5', 'TABLE', 'Table 5'),
+    ('205', 'table6', 'TABLE', 'Table 6');
 
 INSERT INTO employees (id, address, email, full_name, password, role, username, payrate) VALUES
-    ('502', '78 West Blvd.', 'johnny@gmail.com', 'Johnny Bravo', 'bravo123', 'EMPLOYEE', 'johnny_bravo', '$10.50'),
-    ('503', '5 Spring Garden St,', 'rebecca@uncg.edu', 'Rebecca Black', 'black123', 'EMPLOYEE', 'rebecca_black', '$12.50'),
-    ('504', '101 Ayo Rd.', 'dawgpog@gmail.com', 'Will Neff', 'neff123', 'MANAGER', 'will_neff', '$12.00');
+    ('902', '78 West Blvd.', 'johnny@gmail.com', 'Johnny Bravo', 'bravo123', 'EMPLOYEE', 'johnny_bravo', '$10.50'),
+    ('903', '5 Spring Garden St,', 'rebecca@uncg.edu', 'Rebecca Black', 'black123', 'EMPLOYEE', 'rebecca_black', '$12.50'),
+    ('904', '101 Ayo Rd.', 'dawgpog@gmail.com', 'Will Neff', 'neff123', 'MANAGER', 'will_neff', '$12.00');
 
 INSERT INTO items (id, amount, item) VALUES
     ('1', '50', 'Chicken Broth'),
@@ -106,20 +106,20 @@ INSERT INTO items (id, amount, item) VALUES
     ('4', '15', 'Carrots');
 
 INSERT INTO tables (id, table_name, table_status, calls_for_service) VALUES
-    (505, 'Table 1', 'Open', 'Okay'),
-    (506, 'Table 2', 'Open', 'Okay'),
-    (507, 'Table 3', 'Open', 'Okay'),
-    (508, 'Table 4', 'Open', 'Okay'),
-    (509, 'Table 5', 'Open', 'Okay'),
-    (510, 'Table 6', 'Open', 'Okay');
+    (200, 'Table 1', 'Open', 'Okay'),
+    (201, 'Table 2', 'Open', 'Okay'),
+    (202, 'Table 3', 'Open', 'Okay'),
+    (203, 'Table 4', 'Open', 'Okay'),
+    (204, 'Table 5', 'Open', 'Okay'),
+    (205, 'Table 6', 'Open', 'Okay');
 
 INSERT INTO schedules_date (id, date) VALUES
     (1, 'November 12, 2022 - November 29, 2022');
 
 INSERT INTO schedules (id, employee_name, monday, tuesday, wednesday, thursday, friday, saturday) VALUES
-    (502, 'Johnny Bravo', '8:00 AM - 3:00 PM', '8:00 AM - 3:00 PM', 'Off', '8:00 AM - 3:00 PM', '8:00 AM - 3:00 PM', '9:00 AM - 12:00 PM'),
-    (503, 'Rebecca Black', '10:00 AM - 5:00 PM', '8:00 AM - 3:00 PM', 'Off', 'Off', '9:30 AM - 4:30 PM', '9:00 AM - 12:00 PM'),
-    (504, 'Will Neff', 'Off', '7:00 AM - 2:00 PM', 'Off', '8:30 AM - 3:30 PM', 'Off', '9:00 AM - 12:30 PM');
+    (902, 'Johnny Bravo', '8:00 AM - 3:00 PM', '8:00 AM - 3:00 PM', 'Off', '8:00 AM - 3:00 PM', '8:00 AM - 3:00 PM', '9:00 AM - 12:00 PM'),
+    (903, 'Rebecca Black', '10:00 AM - 5:00 PM', '8:00 AM - 3:00 PM', 'Off', 'Off', '9:30 AM - 4:30 PM', '9:00 AM - 12:00 PM'),
+    (904, 'Will Neff', 'Off', '7:00 AM - 2:00 PM', 'Off', '8:30 AM - 3:30 PM', 'Off', '9:00 AM - 12:30 PM');
 
 INSERT INTO menu_items (id, item_type, item, price) VALUES
     (1, 'Custom', 'Bone Broth Soup', 8.55),
