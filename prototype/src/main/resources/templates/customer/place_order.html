@@ -41,7 +41,7 @@
           <div class="u-container-layout u-container-layout-1">
             <div class="u-form u-login-control u-form-1">
                 <form th:each="Employee : ${listItems}">
-                <p align="left"><b>[[${Employee.menuItem}]]:&nbsp;&nbsp;$[[${Employee.price}]]</b> &nbsp;&nbsp;&nbsp;
+                <p align="left"><b>[[${Employee.menuItem}]]:&nbsp;&nbsp;$[[${#numbers.formatDecimal(Employee.price,1,2,'POINT')}]]</b> &nbsp;&nbsp;&nbsp;
                   <a th:href="@{/addNewOrderFromMenu/{name}(name=${Employee.id})}" class="btn btn-dark btn-sm">Add to Order</a>
                 </p>
               </form>
@@ -54,7 +54,7 @@
           <div class="u-container-layout u-container-layout-2">
             <div class="u-form u-login-control u-form-2">
               <form th:each="Employee : ${cartItems}" th:if ="${Employee.tableId == tableId} and ${Employee.status == 'Ordering'}">
-                <p align="left"><b>[[${Employee.itemName}]]:&nbsp;&nbsp;$[[${Employee.total * Employee.quantity}]]</b> &nbsp;&nbsp; <b><br>Quantity: [[${Employee.quantity}]]</b> &nbsp;&nbsp;&nbsp;&nbsp;
+                <p align="left"><b>[[${Employee.itemName}]]:&nbsp;&nbsp;$[[${#numbers.formatDecimal(Employee.total*Employee.quantity,1,2,'POINT')}]]</b> &nbsp;&nbsp; <b><br>Quantity: [[${Employee.quantity}]]</b> &nbsp;&nbsp;&nbsp;&nbsp;
                 <a th:href="@{/updateOrderFromMenu/{id}(id=${Employee.id})}" class="btn btn-dark btn-sm">Update Quantity</a> &nbsp;&nbsp;
                 <a class="fas fa-trash-alt" th:href="@{/deleteOrderFromMenu/{id}(id=${Employee.id})}" style="color:black"></a>
                </p>

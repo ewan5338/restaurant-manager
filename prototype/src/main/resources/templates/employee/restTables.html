@@ -65,7 +65,7 @@
                       <td th:text="${RestTable.tableStatus}" class="u-border-2 u-border-black u-table-cell"></td>
                       <td th:text="${RestTable.calls}" th:style="|${RestTable.calls == 'Needs help' ? 'color: red;' : 'color: green;'}|" class="u-border-2 u-border-black u-table-cell"></td>
                       <td> <a th:href="@{/tableStatusUpdate/{id}(id=${RestTable.id})}" class="btn btn-dark">Update</a>
-                      <a th:href="@{/tableCalls/{id}(id=${RestTable.id})}" class="btn btn-dark">View Orders</a>   
+                      <a th:href="@{/tableOrders/{id}(id=${RestTable.id})}" class="btn btn-dark">View Orders</a>   
                       </td>
                 </tr>
             </tbody>

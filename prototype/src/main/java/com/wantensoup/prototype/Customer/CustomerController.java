@@ -120,13 +120,7 @@ public class CustomerController {
     
     @GetMapping("/deleteOrderFromMenu/{id}")
     public String deleteOrderFromMenu(@PathVariable(value = "id") Integer _id) {
-        List<OrderMenu> tableOrders = orderMenuService.getAllItems();
-        for (OrderMenu items : tableOrders) {
-            if(items.getStatus().equals("Paid") && items.getTableId().equals(_id)) {
-                orderMenuService.deleteItemById(_id);
-            }
-        }
-
+        orderMenuService.deleteItemById(_id);
         return "redirect:/customer/placeorder";
     }
     

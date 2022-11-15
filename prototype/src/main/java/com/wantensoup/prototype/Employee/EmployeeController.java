@@ -7,6 +7,7 @@ package com.wantensoup.prototype.Employee;
  * @author Atsoupe Bessou Kpeglo
  */
 import com.wantensoup.prototype.Menu.MenuService;
+import com.wantensoup.prototype.OrderFromMenu.OrderMenu;
 import com.wantensoup.prototype.OrderFromMenu.OrderMenuService;
 import com.wantensoup.prototype.Schedule.ScheduleService;
 import com.wantensoup.prototype.ScheduleDate.ScheduleDateService;
@@ -50,11 +51,6 @@ public class EmployeeController {
         return "employee/employeehome";
     }
 
-    @GetMapping("/employee/vieworders")
-    public String viewCustomerOrders() {
-        return "employee/view_orders";
-    }
-
     @GetMapping("/employee/manage_tables")
     public String manageTables(Model model) {
         model.addAttribute("listTables", tableService.getAllTables());
@@ -74,11 +70,49 @@ public class EmployeeController {
         return "redirect:/employee/manage_tables";
     }
 
-     @GetMapping("/tableCalls/{id}")
-    public String showTableCalls(@PathVariable(value = "id") Integer id, Model model) {
-        //get employee from the service
-        model.addAttribute("table", orderMenuService.getAllItems());
-        return "customer orders html here";
+     @GetMapping("/tableOrders/{id}")
+    public String showTableCalls(@PathVariable(value = "id") Integer id, Model _model, Model _model2, Model _model3) {
+        List<OrderMenu> list = orderMenuService.getAllItems();
+        float total = 0;
+        
+        for (OrderMenu menu : list) {
+            if (menu.getTableId().equals(id) && menu.getStatus().equals("Ordered")) {
+                total = total + (menu.getTotal() * menu.getQuantity());
+            }
+        }
+        
+        _model.addAttribute("table", orderMenuService.getAllItems());
+        _model2.addAttribute("tableId", id);
+        _model3.addAttribute("total", total);
+        return "employee/view_orders";
+    }
+    
+    @GetMapping("/updateOrderEmployee/{id}")
+    public String updateOrderFromMenu(@PathVariable(value = "id") Integer _id, Model _model) {
+        OrderMenu item = orderMenuService.getItemById(_id);
+        _model.addAttribute("item", item);
+        return "employee/update_quantity";
+    }
+    
+    @PostMapping("/saveOrderEmployee")
+    public String saveNewOrderFromMenu(@ModelAttribute("item") OrderMenu _item) {
+        orderMenuService.saveItem(_item);
+        return "redirect:/employee/manage_tables";
+    }
+    
+    @GetMapping("/deleteOrderEmployee/{id}")
+    public String deleteOrderFromMenu(@PathVariable(value = "id") Integer _id, Model _model) {
+        Integer tableId = 0;
+        List<OrderMenu> list = orderMenuService.getAllItems();
+        
+        for(OrderMenu menu : list) {
+            if (menu.getId().equals(_id)) {
+                tableId = menu.getTableId();
+            }
+        }
+        
+        orderMenuService.deleteItemById(_id);
+        return "redirect:/tableOrders/" + tableId;
     }
     
     @GetMapping("/employee/info")

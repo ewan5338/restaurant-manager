@@ -43,7 +43,7 @@
           <div class="u-container-layout u-container-layout-1">
             <div class="u-form u-login-control u-form-1">
               <form th:each="Orders : ${orders}" th:if ="${Orders.tableId == tableId} and ${Orders.status == 'Ordered'}">
-                <p align="left"><b>[[${Orders.itemName}]]:&nbsp;&nbsp;$[[${Orders.total * Orders.quantity}]]</b> &nbsp;&nbsp; <b><br>Quantity: [[${Orders.quantity}]]</b>
+                <p align="left"><b>[[${Orders.itemName}]]:&nbsp;&nbsp;$[[${#numbers.formatDecimal(Orders.total*Orders.quantity,1,2,'POINT')}]]</b> &nbsp;&nbsp; <b><br>Quantity: [[${Orders.quantity}]]</b>
                </p>
             </form>
                 <p style="color: black;font-size:22px;"><br><br><b>Total: $[[${#numbers.formatDecimal(total,1,2,'POINT')}]]</b></p>
